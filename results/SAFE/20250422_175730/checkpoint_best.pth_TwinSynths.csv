@@ -1,0 +1,5 @@
+./checkpoint/checkpoint_best.pth model testing on...
+testset,accuracy,avg precision
+TwinSynths_DM,49.1,45.399224922914016
+TwinSynths_GAN,50.4875,50.19978723144589
+mean,49.79375,47.799506077179956

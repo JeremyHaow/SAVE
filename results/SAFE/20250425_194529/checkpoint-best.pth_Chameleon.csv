@@ -1,0 +1,4 @@
+./checkpoint/checkpoint-best.pth model testing on...
+testset,accuracy,avg precision
+Chameleon,59.53213229362731,46.32162013521446
+mean,59.53213229362731,46.32162013521446
