@@ -1,4 +1,3 @@
-./results/SAFE/20250427_114734/checkpoint-best.pth model testing on...
 testset,accuracy,avg precision
 ADM,80.7,96.41212559843308
 DALLE2,98.55000000000001,99.8075129216737
