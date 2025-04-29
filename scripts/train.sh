@@ -42,9 +42,10 @@ do
             --blr 1e-2 \
             --weight_decay 0.01 \
             --warmup_epochs 1 \
-            --epochs 20 \
+            --epochs 10 \
             --num_workers 16 \
             --output_dir $OUTPUT_PATH \
+            --seed 3 \
         2>&1 | tee -a $OUTPUT_PATH/log_train.txt
 
     done

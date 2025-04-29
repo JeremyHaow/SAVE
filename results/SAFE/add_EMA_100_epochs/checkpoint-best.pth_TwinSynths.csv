@@ -1,0 +1,5 @@
+./results/SAFE/20250428_205854/checkpoint-best.pth model testing on...
+testset,accuracy,avg precision
+TwinSynths_DM,48.81875,40.411684319426776
+TwinSynths_GAN,49.8625,52.774126844462344
+mean,49.340625,46.592905581944564

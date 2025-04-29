@@ -1,0 +1,4 @@
+./results/SAFE/20250428_184834/checkpoint-best.pth model testing on...
+testset,accuracy,avg precision
+Chameleon,58.98282948565282,40.011017254337176
+mean,58.98282948565282,40.011017254337176

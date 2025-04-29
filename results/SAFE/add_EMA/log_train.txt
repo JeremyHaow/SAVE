@@ -1,0 +1,1102 @@
+/root/miniconda/lib/python3.10/site-packages/torch/distributed/launch.py:183: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+| distributed init (rank 0): env://, gpu 0
+Namespace(jpeg_factor=None, blur_sigma=None, mask_ratio=None, mask_patch_size=None, transform_mode='texture', batch_size=32, epochs=20, update_freq=1, model='SAFE', input_size=256, layer_decay_type='single', model_ema=False, model_ema_decay=0.9999, model_ema_force_cpu=False, model_ema_eval=False, clip_grad=None, weight_decay=0.01, lr=None, blr=0.01, layer_decay=1.0, min_lr=1e-06, warmup_epochs=1, warmup_steps=-1, opt='adamw', opt_eps=1e-08, opt_betas=None, momentum=0.9, weight_decay_end=None, smoothing=0.1, mixup=0.0, cutmix=0.0, cutmix_minmax=None, mixup_prob=1.0, mixup_switch_prob=0.5, mixup_mode='batch', pretrained=True, global_pool=True, head_init_scale=0.001, model_key='model|module', model_prefix='', num_train=10000000000, data_path='/root/lanyun-tmp/datasets/train_ForenSynths/train', nb_classes=2, output_dir='results/SAFE/20250428_184834', log_dir=None, device='cuda', seed=None, resume='', eval_data_path='/root/lanyun-tmp/datasets/train_ForenSynths/val', imagenet_default_mean_and_std=True, data_set='IMNET', auto_resume=True, save_ckpt=True, save_ckpt_freq=1, save_ckpt_num=100, start_epoch=0, eval=False, dist_eval=True, disable_eval=False, num_workers=16, pin_mem=True, crop_pct=None, world_size=1, local_rank=0, dist_on_itp=False, dist_url='env://', use_amp=False, rank=0, gpu=0, distributed=True, dist_backend='nccl')
+Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x7f38b38340a0>
+Number of params: 0.75M
+Base lr: 1.00e-02
+Actual lr: 1.25e-03
+Accumulate grad iterations: 1
+Effective batch size: 32
+criterion = LabelSmoothingCrossEntropy()
+Auto resume checkpoint: 
+Start training for 20 epochs
+[rank0]:[W reducer.cpp:1360] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+Epoch: [0]  [   0/4500]  eta: 5:52:16  lr: 0.000000  loss: 0.7029 (0.7029)  class_acc: 0.5625 (0.5625)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 4.6971
+Epoch: [0]  [ 100/4500]  eta: 0:07:56  lr: 0.000028  loss: 0.6935 (0.7295)  class_acc: 0.5000 (0.5077)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [0]  [ 200/4500]  eta: 0:06:09  lr: 0.000056  loss: 0.6953 (0.7124)  class_acc: 0.4688 (0.5045)  min_lr: 0.0001 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [0]  [ 300/4500]  eta: 0:05:32  lr: 0.000083  loss: 0.6969 (0.7058)  class_acc: 0.5000 (0.5103)  min_lr: 0.0001 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [0]  [ 400/4500]  eta: 0:05:11  lr: 0.000111  loss: 0.6931 (0.7034)  class_acc: 0.5000 (0.5100)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0682
+Epoch: [0]  [ 500/4500]  eta: 0:04:53  lr: 0.000139  loss: 0.6846 (0.7012)  class_acc: 0.5938 (0.5169)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [0]  [ 600/4500]  eta: 0:04:41  lr: 0.000167  loss: 0.7032 (0.7006)  class_acc: 0.4688 (0.5152)  min_lr: 0.0002 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0683
+Epoch: [0]  [ 700/4500]  eta: 0:04:30  lr: 0.000194  loss: 0.6829 (0.6992)  class_acc: 0.5312 (0.5178)  min_lr: 0.0002 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0655
+Epoch: [0]  [ 800/4500]  eta: 0:04:19  lr: 0.000222  loss: 0.6860 (0.6972)  class_acc: 0.5625 (0.5234)  min_lr: 0.0002 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [0]  [ 900/4500]  eta: 0:04:09  lr: 0.000250  loss: 0.6720 (0.6950)  class_acc: 0.5625 (0.5298)  min_lr: 0.0002 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0669
+Epoch: [0]  [1000/4500]  eta: 0:04:01  lr: 0.000278  loss: 0.6297 (0.6910)  class_acc: 0.6562 (0.5389)  min_lr: 0.0003 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [0]  [1100/4500]  eta: 0:03:52  lr: 0.000306  loss: 0.6241 (0.6853)  class_acc: 0.6562 (0.5501)  min_lr: 0.0003 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0571
+Epoch: [0]  [1200/4500]  eta: 0:03:44  lr: 0.000333  loss: 0.5918 (0.6790)  class_acc: 0.6875 (0.5613)  min_lr: 0.0003 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [0]  [1300/4500]  eta: 0:03:37  lr: 0.000361  loss: 0.5336 (0.6699)  class_acc: 0.7188 (0.5741)  min_lr: 0.0004 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [0]  [1400/4500]  eta: 0:03:28  lr: 0.000389  loss: 0.5780 (0.6619)  class_acc: 0.6875 (0.5853)  min_lr: 0.0004 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [0]  [1500/4500]  eta: 0:03:21  lr: 0.000417  loss: 0.4904 (0.6528)  class_acc: 0.8125 (0.5974)  min_lr: 0.0004 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [0]  [1600/4500]  eta: 0:03:12  lr: 0.000444  loss: 0.4832 (0.6444)  class_acc: 0.7812 (0.6084)  min_lr: 0.0004 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [0]  [1700/4500]  eta: 0:03:04  lr: 0.000472  loss: 0.4854 (0.6349)  class_acc: 0.8125 (0.6199)  min_lr: 0.0005 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [0]  [1800/4500]  eta: 0:02:57  lr: 0.000500  loss: 0.4517 (0.6263)  class_acc: 0.8438 (0.6302)  min_lr: 0.0005 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [0]  [1900/4500]  eta: 0:02:50  lr: 0.000528  loss: 0.4277 (0.6184)  class_acc: 0.8750 (0.6399)  min_lr: 0.0005 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [0]  [2000/4500]  eta: 0:02:43  lr: 0.000556  loss: 0.4493 (0.6109)  class_acc: 0.8438 (0.6491)  min_lr: 0.0006 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0657
+Epoch: [0]  [2100/4500]  eta: 0:02:36  lr: 0.000583  loss: 0.4389 (0.6030)  class_acc: 0.8125 (0.6584)  min_lr: 0.0006 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [0]  [2200/4500]  eta: 0:02:30  lr: 0.000611  loss: 0.4538 (0.5957)  class_acc: 0.8438 (0.6665)  min_lr: 0.0006 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0661
+Epoch: [0]  [2300/4500]  eta: 0:02:23  lr: 0.000639  loss: 0.4165 (0.5889)  class_acc: 0.8438 (0.6743)  min_lr: 0.0006 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [0]  [2400/4500]  eta: 0:02:16  lr: 0.000667  loss: 0.4281 (0.5828)  class_acc: 0.8438 (0.6811)  min_lr: 0.0007 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [0]  [2500/4500]  eta: 0:02:09  lr: 0.000694  loss: 0.4231 (0.5769)  class_acc: 0.8438 (0.6877)  min_lr: 0.0007 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [0]  [2600/4500]  eta: 0:02:02  lr: 0.000722  loss: 0.3975 (0.5707)  class_acc: 0.8750 (0.6943)  min_lr: 0.0007 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0574
+Epoch: [0]  [2700/4500]  eta: 0:01:56  lr: 0.000750  loss: 0.3991 (0.5652)  class_acc: 0.8750 (0.7006)  min_lr: 0.0007 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [0]  [2800/4500]  eta: 0:01:49  lr: 0.000778  loss: 0.4084 (0.5597)  class_acc: 0.8438 (0.7065)  min_lr: 0.0008 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [0]  [2900/4500]  eta: 0:01:43  lr: 0.000806  loss: 0.4235 (0.5548)  class_acc: 0.8750 (0.7119)  min_lr: 0.0008 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [0]  [3000/4500]  eta: 0:01:36  lr: 0.000833  loss: 0.4149 (0.5503)  class_acc: 0.8438 (0.7166)  min_lr: 0.0008 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [0]  [3100/4500]  eta: 0:01:30  lr: 0.000861  loss: 0.3733 (0.5456)  class_acc: 0.9062 (0.7216)  min_lr: 0.0009 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [0]  [3200/4500]  eta: 0:01:23  lr: 0.000889  loss: 0.3907 (0.5406)  class_acc: 0.8750 (0.7267)  min_lr: 0.0009 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [0]  [3300/4500]  eta: 0:01:17  lr: 0.000917  loss: 0.3660 (0.5360)  class_acc: 0.8750 (0.7314)  min_lr: 0.0009 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [0]  [3400/4500]  eta: 0:01:10  lr: 0.000944  loss: 0.3853 (0.5322)  class_acc: 0.8750 (0.7355)  min_lr: 0.0009 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [0]  [3500/4500]  eta: 0:01:04  lr: 0.000972  loss: 0.3986 (0.5285)  class_acc: 0.8750 (0.7391)  min_lr: 0.0010 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [0]  [3600/4500]  eta: 0:00:57  lr: 0.001000  loss: 0.3849 (0.5249)  class_acc: 0.8750 (0.7430)  min_lr: 0.0010 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [0]  [3700/4500]  eta: 0:00:51  lr: 0.001028  loss: 0.3907 (0.5213)  class_acc: 0.8750 (0.7466)  min_lr: 0.0010 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [0]  [3800/4500]  eta: 0:00:44  lr: 0.001056  loss: 0.4143 (0.5176)  class_acc: 0.8438 (0.7502)  min_lr: 0.0011 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [0]  [3900/4500]  eta: 0:00:38  lr: 0.001083  loss: 0.3556 (0.5143)  class_acc: 0.9062 (0.7536)  min_lr: 0.0011 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [0]  [4000/4500]  eta: 0:00:31  lr: 0.001111  loss: 0.4010 (0.5112)  class_acc: 0.8750 (0.7567)  min_lr: 0.0011 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [0]  [4100/4500]  eta: 0:00:25  lr: 0.001139  loss: 0.3502 (0.5076)  class_acc: 0.8750 (0.7601)  min_lr: 0.0011 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [0]  [4200/4500]  eta: 0:00:19  lr: 0.001167  loss: 0.3624 (0.5045)  class_acc: 0.8750 (0.7630)  min_lr: 0.0012 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [0]  [4300/4500]  eta: 0:00:12  lr: 0.001194  loss: 0.3707 (0.5018)  class_acc: 0.8750 (0.7658)  min_lr: 0.0012 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [0]  [4400/4500]  eta: 0:00:06  lr: 0.001222  loss: 0.3739 (0.4990)  class_acc: 0.8750 (0.7685)  min_lr: 0.0012 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [0]  [4499/4500]  eta: 0:00:00  lr: 0.001250  loss: 0.3854 (0.4963)  class_acc: 0.8750 (0.7711)  min_lr: 0.0012 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [0] Total time: 0:04:46 (0.0636 s / it)
+Averaged stats: lr: 0.001250  loss: 0.3854 (0.4963)  class_acc: 0.8750 (0.7711)  min_lr: 0.0012 (0.0006)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:21  loss: 0.7487 (0.7487)  acc1: 0.7188 (0.7188)  time: 1.6364
+Test:  [49/50]  eta: 0:00:00  loss: 0.0066 (0.4900)  acc1: 1.0000 (0.7844)  time: 0.0179
+Test: Total time: 0:00:02 (0.0535 s / it)
+* Acc@1 78.44% loss 0.4900
+Accuracy of the model on the 1600 test images: 78.44%
+Max accuracy: 78.44%
+Epoch: [1]  [   0/4500]  eta: 2:18:14  lr: 0.001250  loss: 0.7598 (0.7598)  class_acc: 0.6562 (0.6562)  min_lr: 0.0012 (0.0013)  weight_decay: 0.0100 (0.0100)  time: 1.8433
+Epoch: [1]  [ 100/4500]  eta: 0:06:06  lr: 0.001250  loss: 0.3478 (0.3731)  class_acc: 0.9062 (0.8945)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [1]  [ 200/4500]  eta: 0:05:15  lr: 0.001250  loss: 0.3055 (0.3742)  class_acc: 0.9375 (0.8918)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [1]  [ 300/4500]  eta: 0:04:48  lr: 0.001250  loss: 0.3910 (0.3733)  class_acc: 0.8750 (0.8920)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0545
+Epoch: [1]  [ 400/4500]  eta: 0:04:34  lr: 0.001250  loss: 0.3265 (0.3763)  class_acc: 0.9062 (0.8903)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [1]  [ 500/4500]  eta: 0:04:25  lr: 0.001250  loss: 0.3636 (0.3735)  class_acc: 0.9062 (0.8920)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0670
+Epoch: [1]  [ 600/4500]  eta: 0:04:16  lr: 0.001250  loss: 0.3334 (0.3718)  class_acc: 0.9062 (0.8921)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [1]  [ 700/4500]  eta: 0:04:07  lr: 0.001250  loss: 0.3238 (0.3713)  class_acc: 0.9062 (0.8925)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [1]  [ 800/4500]  eta: 0:03:59  lr: 0.001250  loss: 0.3198 (0.3690)  class_acc: 0.9375 (0.8943)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [1]  [ 900/4500]  eta: 0:03:52  lr: 0.001250  loss: 0.3506 (0.3675)  class_acc: 0.8750 (0.8953)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [1]  [1000/4500]  eta: 0:03:44  lr: 0.001250  loss: 0.3426 (0.3661)  class_acc: 0.9062 (0.8962)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [1]  [1100/4500]  eta: 0:03:37  lr: 0.001249  loss: 0.3392 (0.3654)  class_acc: 0.9062 (0.8967)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0668
+Epoch: [1]  [1200/4500]  eta: 0:03:31  lr: 0.001249  loss: 0.3330 (0.3651)  class_acc: 0.9062 (0.8969)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [1]  [1300/4500]  eta: 0:03:24  lr: 0.001249  loss: 0.3230 (0.3621)  class_acc: 0.9375 (0.8988)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [1]  [1400/4500]  eta: 0:03:17  lr: 0.001249  loss: 0.2969 (0.3599)  class_acc: 0.9375 (0.8998)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [1]  [1500/4500]  eta: 0:03:10  lr: 0.001249  loss: 0.3393 (0.3591)  class_acc: 0.9375 (0.9004)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [1]  [1600/4500]  eta: 0:03:04  lr: 0.001249  loss: 0.3329 (0.3588)  class_acc: 0.9062 (0.9005)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [1]  [1700/4500]  eta: 0:02:58  lr: 0.001249  loss: 0.3387 (0.3579)  class_acc: 0.9062 (0.9011)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0666
+Epoch: [1]  [1800/4500]  eta: 0:02:51  lr: 0.001249  loss: 0.3156 (0.3570)  class_acc: 0.9062 (0.9012)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0675
+Epoch: [1]  [1900/4500]  eta: 0:02:45  lr: 0.001248  loss: 0.3504 (0.3564)  class_acc: 0.8750 (0.9016)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [1]  [2000/4500]  eta: 0:02:38  lr: 0.001248  loss: 0.3445 (0.3565)  class_acc: 0.8750 (0.9016)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [1]  [2100/4500]  eta: 0:02:32  lr: 0.001248  loss: 0.3142 (0.3553)  class_acc: 0.9375 (0.9024)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0664
+Epoch: [1]  [2200/4500]  eta: 0:02:26  lr: 0.001248  loss: 0.2976 (0.3540)  class_acc: 0.9062 (0.9031)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [1]  [2300/4500]  eta: 0:02:19  lr: 0.001248  loss: 0.3398 (0.3534)  class_acc: 0.9062 (0.9035)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [1]  [2400/4500]  eta: 0:02:13  lr: 0.001248  loss: 0.3106 (0.3528)  class_acc: 0.9375 (0.9037)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [1]  [2500/4500]  eta: 0:02:06  lr: 0.001247  loss: 0.3029 (0.3516)  class_acc: 0.9375 (0.9043)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [1]  [2600/4500]  eta: 0:02:00  lr: 0.001247  loss: 0.3360 (0.3510)  class_acc: 0.9062 (0.9045)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [1]  [2700/4500]  eta: 0:01:54  lr: 0.001247  loss: 0.3084 (0.3500)  class_acc: 0.9062 (0.9051)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [1]  [2800/4500]  eta: 0:01:47  lr: 0.001247  loss: 0.3085 (0.3491)  class_acc: 0.9375 (0.9057)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [1]  [2900/4500]  eta: 0:01:41  lr: 0.001246  loss: 0.3339 (0.3483)  class_acc: 0.9375 (0.9063)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [1]  [3000/4500]  eta: 0:01:35  lr: 0.001246  loss: 0.3633 (0.3477)  class_acc: 0.9062 (0.9068)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [1]  [3100/4500]  eta: 0:01:28  lr: 0.001246  loss: 0.3403 (0.3474)  class_acc: 0.9062 (0.9071)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [1]  [3200/4500]  eta: 0:01:22  lr: 0.001246  loss: 0.2697 (0.3464)  class_acc: 0.9375 (0.9079)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [1]  [3300/4500]  eta: 0:01:16  lr: 0.001245  loss: 0.2790 (0.3452)  class_acc: 0.9375 (0.9086)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [1]  [3400/4500]  eta: 0:01:09  lr: 0.001245  loss: 0.3287 (0.3449)  class_acc: 0.9062 (0.9088)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0657
+Epoch: [1]  [3500/4500]  eta: 0:01:03  lr: 0.001245  loss: 0.2858 (0.3441)  class_acc: 0.9062 (0.9094)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0659
+Epoch: [1]  [3600/4500]  eta: 0:00:56  lr: 0.001245  loss: 0.2793 (0.3431)  class_acc: 0.9688 (0.9100)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [1]  [3700/4500]  eta: 0:00:50  lr: 0.001244  loss: 0.3116 (0.3427)  class_acc: 0.9375 (0.9103)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [1]  [3800/4500]  eta: 0:00:44  lr: 0.001244  loss: 0.3455 (0.3421)  class_acc: 0.9062 (0.9106)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [1]  [3900/4500]  eta: 0:00:37  lr: 0.001244  loss: 0.3019 (0.3417)  class_acc: 0.9375 (0.9110)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [1]  [4000/4500]  eta: 0:00:31  lr: 0.001243  loss: 0.2694 (0.3408)  class_acc: 0.9688 (0.9116)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [1]  [4100/4500]  eta: 0:00:25  lr: 0.001243  loss: 0.3080 (0.3403)  class_acc: 0.9375 (0.9120)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [1]  [4200/4500]  eta: 0:00:18  lr: 0.001243  loss: 0.2843 (0.3397)  class_acc: 0.9375 (0.9123)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [1]  [4300/4500]  eta: 0:00:12  lr: 0.001242  loss: 0.2857 (0.3388)  class_acc: 0.9688 (0.9128)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0645
+Epoch: [1]  [4400/4500]  eta: 0:00:06  lr: 0.001242  loss: 0.2861 (0.3382)  class_acc: 0.9375 (0.9132)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [1]  [4499/4500]  eta: 0:00:00  lr: 0.001241  loss: 0.2977 (0.3377)  class_acc: 0.9375 (0.9135)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0587
+Epoch: [1] Total time: 0:04:44 (0.0633 s / it)
+Averaged stats: lr: 0.001241  loss: 0.2977 (0.3377)  class_acc: 0.9375 (0.9135)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:58  loss: 0.0487 (0.0487)  acc1: 1.0000 (1.0000)  time: 1.1686
+Test:  [49/50]  eta: 0:00:00  loss: 0.0289 (0.0573)  acc1: 1.0000 (0.9912)  time: 0.0171
+Test: Total time: 0:00:02 (0.0504 s / it)
+* Acc@1 99.12% loss 0.0573
+Accuracy of the model on the 1600 test images: 99.12%
+Max accuracy: 99.12%
+Epoch: [2]  [   0/4500]  eta: 2:23:09  lr: 0.001241  loss: 0.4797 (0.4797)  class_acc: 0.7812 (0.7812)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 1.9087
+Epoch: [2]  [ 100/4500]  eta: 0:05:49  lr: 0.001241  loss: 0.3103 (0.3066)  class_acc: 0.9375 (0.9366)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [2]  [ 200/4500]  eta: 0:05:09  lr: 0.001241  loss: 0.3173 (0.3038)  class_acc: 0.9375 (0.9370)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0678
+Epoch: [2]  [ 300/4500]  eta: 0:04:52  lr: 0.001240  loss: 0.2792 (0.3025)  class_acc: 0.9375 (0.9374)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [2]  [ 400/4500]  eta: 0:04:40  lr: 0.001240  loss: 0.2664 (0.3042)  class_acc: 0.9375 (0.9370)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [2]  [ 500/4500]  eta: 0:04:30  lr: 0.001239  loss: 0.2530 (0.3058)  class_acc: 0.9688 (0.9363)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [2]  [ 600/4500]  eta: 0:04:17  lr: 0.001239  loss: 0.2939 (0.3074)  class_acc: 0.9375 (0.9350)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [2]  [ 700/4500]  eta: 0:04:06  lr: 0.001239  loss: 0.3152 (0.3072)  class_acc: 0.9375 (0.9354)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [2]  [ 800/4500]  eta: 0:03:58  lr: 0.001238  loss: 0.2945 (0.3074)  class_acc: 0.9375 (0.9348)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [2]  [ 900/4500]  eta: 0:03:50  lr: 0.001238  loss: 0.2859 (0.3055)  class_acc: 0.9375 (0.9356)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0598
+Epoch: [2]  [1000/4500]  eta: 0:03:43  lr: 0.001237  loss: 0.2884 (0.3056)  class_acc: 0.9375 (0.9354)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [2]  [1100/4500]  eta: 0:03:36  lr: 0.001237  loss: 0.3060 (0.3052)  class_acc: 0.9375 (0.9356)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [2]  [1200/4500]  eta: 0:03:30  lr: 0.001236  loss: 0.2719 (0.3038)  class_acc: 0.9375 (0.9365)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [2]  [1300/4500]  eta: 0:03:24  lr: 0.001236  loss: 0.2641 (0.3032)  class_acc: 0.9688 (0.9366)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [2]  [1400/4500]  eta: 0:03:16  lr: 0.001235  loss: 0.3004 (0.3025)  class_acc: 0.9375 (0.9371)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [2]  [1500/4500]  eta: 0:03:09  lr: 0.001235  loss: 0.2970 (0.3026)  class_acc: 0.9375 (0.9370)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [2]  [1600/4500]  eta: 0:03:03  lr: 0.001234  loss: 0.2929 (0.3022)  class_acc: 0.9375 (0.9374)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [2]  [1700/4500]  eta: 0:02:56  lr: 0.001234  loss: 0.2775 (0.3018)  class_acc: 0.9375 (0.9375)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [2]  [1800/4500]  eta: 0:02:50  lr: 0.001233  loss: 0.2586 (0.3013)  class_acc: 0.9688 (0.9377)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [2]  [1900/4500]  eta: 0:02:43  lr: 0.001233  loss: 0.2702 (0.3011)  class_acc: 0.9375 (0.9377)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [2]  [2000/4500]  eta: 0:02:37  lr: 0.001232  loss: 0.2723 (0.3010)  class_acc: 0.9375 (0.9378)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [2]  [2100/4500]  eta: 0:02:30  lr: 0.001232  loss: 0.2721 (0.3005)  class_acc: 0.9688 (0.9381)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [2]  [2200/4500]  eta: 0:02:24  lr: 0.001231  loss: 0.2854 (0.3002)  class_acc: 0.9375 (0.9382)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0558
+Epoch: [2]  [2300/4500]  eta: 0:02:17  lr: 0.001231  loss: 0.2945 (0.3002)  class_acc: 0.9375 (0.9384)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [2]  [2400/4500]  eta: 0:02:11  lr: 0.001230  loss: 0.2696 (0.3002)  class_acc: 0.9688 (0.9385)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [2]  [2500/4500]  eta: 0:02:05  lr: 0.001229  loss: 0.2744 (0.2997)  class_acc: 0.9375 (0.9388)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [2]  [2600/4500]  eta: 0:01:58  lr: 0.001229  loss: 0.2783 (0.2999)  class_acc: 0.9375 (0.9386)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [2]  [2700/4500]  eta: 0:01:52  lr: 0.001228  loss: 0.2780 (0.2991)  class_acc: 0.9375 (0.9392)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [2]  [2800/4500]  eta: 0:01:46  lr: 0.001228  loss: 0.3032 (0.2991)  class_acc: 0.9375 (0.9392)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0592
+Epoch: [2]  [2900/4500]  eta: 0:01:39  lr: 0.001227  loss: 0.2860 (0.2987)  class_acc: 0.9375 (0.9395)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0579
+Epoch: [2]  [3000/4500]  eta: 0:01:33  lr: 0.001226  loss: 0.2802 (0.2986)  class_acc: 0.9375 (0.9396)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [2]  [3100/4500]  eta: 0:01:27  lr: 0.001226  loss: 0.2572 (0.2980)  class_acc: 0.9688 (0.9398)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [2]  [3200/4500]  eta: 0:01:20  lr: 0.001225  loss: 0.2771 (0.2974)  class_acc: 0.9375 (0.9402)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [2]  [3300/4500]  eta: 0:01:14  lr: 0.001225  loss: 0.2982 (0.2970)  class_acc: 0.9375 (0.9404)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [2]  [3400/4500]  eta: 0:01:08  lr: 0.001224  loss: 0.2704 (0.2966)  class_acc: 0.9688 (0.9407)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [2]  [3500/4500]  eta: 0:01:02  lr: 0.001223  loss: 0.2550 (0.2965)  class_acc: 0.9688 (0.9407)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [2]  [3600/4500]  eta: 0:00:56  lr: 0.001223  loss: 0.2496 (0.2964)  class_acc: 0.9688 (0.9409)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0595
+Epoch: [2]  [3700/4500]  eta: 0:00:49  lr: 0.001222  loss: 0.2647 (0.2962)  class_acc: 0.9375 (0.9411)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [2]  [3800/4500]  eta: 0:00:43  lr: 0.001221  loss: 0.2709 (0.2957)  class_acc: 0.9375 (0.9414)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [2]  [3900/4500]  eta: 0:00:37  lr: 0.001220  loss: 0.2847 (0.2955)  class_acc: 0.9375 (0.9414)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0655
+Epoch: [2]  [4000/4500]  eta: 0:00:30  lr: 0.001220  loss: 0.2602 (0.2953)  class_acc: 0.9375 (0.9416)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [2]  [4100/4500]  eta: 0:00:24  lr: 0.001219  loss: 0.2598 (0.2947)  class_acc: 0.9688 (0.9419)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0533
+Epoch: [2]  [4200/4500]  eta: 0:00:18  lr: 0.001218  loss: 0.2822 (0.2945)  class_acc: 0.9688 (0.9421)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [2]  [4300/4500]  eta: 0:00:12  lr: 0.001218  loss: 0.2604 (0.2938)  class_acc: 0.9688 (0.9426)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [2]  [4400/4500]  eta: 0:00:06  lr: 0.001217  loss: 0.2624 (0.2936)  class_acc: 0.9375 (0.9426)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [2]  [4499/4500]  eta: 0:00:00  lr: 0.001216  loss: 0.2795 (0.2936)  class_acc: 0.9375 (0.9427)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [2] Total time: 0:04:37 (0.0617 s / it)
+Averaged stats: lr: 0.001216  loss: 0.2795 (0.2936)  class_acc: 0.9375 (0.9427)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:57  loss: 0.0599 (0.0599)  acc1: 1.0000 (1.0000)  time: 1.1528
+Test:  [49/50]  eta: 0:00:00  loss: 0.0286 (0.0526)  acc1: 1.0000 (0.9975)  time: 0.0170
+Test: Total time: 0:00:02 (0.0535 s / it)
+* Acc@1 99.75% loss 0.0526
+Accuracy of the model on the 1600 test images: 99.75%
+Max accuracy: 99.75%
+Epoch: [3]  [   0/4500]  eta: 1:49:15  lr: 0.001216  loss: 0.2623 (0.2623)  class_acc: 0.9062 (0.9062)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 1.4567
+Epoch: [3]  [ 100/4500]  eta: 0:06:00  lr: 0.001215  loss: 0.2531 (0.2757)  class_acc: 0.9688 (0.9554)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [3]  [ 200/4500]  eta: 0:05:11  lr: 0.001215  loss: 0.2529 (0.2726)  class_acc: 0.9688 (0.9562)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [3]  [ 300/4500]  eta: 0:04:49  lr: 0.001214  loss: 0.2940 (0.2829)  class_acc: 0.9375 (0.9493)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [3]  [ 400/4500]  eta: 0:04:33  lr: 0.001213  loss: 0.2675 (0.2795)  class_acc: 0.9375 (0.9519)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [3]  [ 500/4500]  eta: 0:04:22  lr: 0.001212  loss: 0.2748 (0.2790)  class_acc: 0.9375 (0.9520)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [3]  [ 600/4500]  eta: 0:04:13  lr: 0.001212  loss: 0.2581 (0.2795)  class_acc: 0.9688 (0.9510)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [3]  [ 700/4500]  eta: 0:04:05  lr: 0.001211  loss: 0.2472 (0.2787)  class_acc: 0.9688 (0.9514)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [3]  [ 800/4500]  eta: 0:03:58  lr: 0.001210  loss: 0.2687 (0.2786)  class_acc: 0.9688 (0.9515)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [3]  [ 900/4500]  eta: 0:03:51  lr: 0.001209  loss: 0.2836 (0.2789)  class_acc: 0.9375 (0.9513)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [3]  [1000/4500]  eta: 0:03:44  lr: 0.001208  loss: 0.2720 (0.2788)  class_acc: 0.9375 (0.9513)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [3]  [1100/4500]  eta: 0:03:36  lr: 0.001207  loss: 0.2462 (0.2779)  class_acc: 0.9688 (0.9519)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0546
+Epoch: [3]  [1200/4500]  eta: 0:03:28  lr: 0.001207  loss: 0.2453 (0.2772)  class_acc: 0.9688 (0.9523)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [3]  [1300/4500]  eta: 0:03:22  lr: 0.001206  loss: 0.2616 (0.2769)  class_acc: 0.9688 (0.9526)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0660
+Epoch: [3]  [1400/4500]  eta: 0:03:15  lr: 0.001205  loss: 0.2461 (0.2766)  class_acc: 0.9688 (0.9528)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [3]  [1500/4500]  eta: 0:03:09  lr: 0.001204  loss: 0.2567 (0.2763)  class_acc: 0.9688 (0.9529)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [3]  [1600/4500]  eta: 0:03:03  lr: 0.001203  loss: 0.2284 (0.2761)  class_acc: 0.9688 (0.9530)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [3]  [1700/4500]  eta: 0:02:56  lr: 0.001202  loss: 0.2764 (0.2759)  class_acc: 0.9375 (0.9530)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [3]  [1800/4500]  eta: 0:02:50  lr: 0.001201  loss: 0.2463 (0.2760)  class_acc: 0.9688 (0.9532)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [3]  [1900/4500]  eta: 0:02:43  lr: 0.001201  loss: 0.2589 (0.2760)  class_acc: 0.9688 (0.9531)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [3]  [2000/4500]  eta: 0:02:37  lr: 0.001200  loss: 0.2563 (0.2760)  class_acc: 0.9688 (0.9533)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [3]  [2100/4500]  eta: 0:02:31  lr: 0.001199  loss: 0.2453 (0.2755)  class_acc: 0.9688 (0.9536)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [3]  [2200/4500]  eta: 0:02:24  lr: 0.001198  loss: 0.2499 (0.2754)  class_acc: 0.9688 (0.9537)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [3]  [2300/4500]  eta: 0:02:18  lr: 0.001197  loss: 0.2714 (0.2753)  class_acc: 0.9375 (0.9538)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [3]  [2400/4500]  eta: 0:02:11  lr: 0.001196  loss: 0.2535 (0.2751)  class_acc: 0.9688 (0.9539)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [3]  [2500/4500]  eta: 0:02:05  lr: 0.001195  loss: 0.2539 (0.2745)  class_acc: 0.9688 (0.9543)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [3]  [2600/4500]  eta: 0:01:59  lr: 0.001194  loss: 0.2427 (0.2741)  class_acc: 0.9688 (0.9545)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [3]  [2700/4500]  eta: 0:01:52  lr: 0.001193  loss: 0.2644 (0.2741)  class_acc: 0.9688 (0.9546)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [3]  [2800/4500]  eta: 0:01:46  lr: 0.001192  loss: 0.2524 (0.2737)  class_acc: 0.9688 (0.9548)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [3]  [2900/4500]  eta: 0:01:40  lr: 0.001191  loss: 0.2568 (0.2733)  class_acc: 0.9688 (0.9551)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [3]  [3000/4500]  eta: 0:01:33  lr: 0.001190  loss: 0.2579 (0.2730)  class_acc: 0.9375 (0.9551)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [3]  [3100/4500]  eta: 0:01:27  lr: 0.001189  loss: 0.2599 (0.2727)  class_acc: 0.9688 (0.9552)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [3]  [3200/4500]  eta: 0:01:21  lr: 0.001188  loss: 0.2587 (0.2726)  class_acc: 0.9688 (0.9552)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [3]  [3300/4500]  eta: 0:01:15  lr: 0.001187  loss: 0.2431 (0.2723)  class_acc: 0.9688 (0.9555)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [3]  [3400/4500]  eta: 0:01:08  lr: 0.001186  loss: 0.2731 (0.2723)  class_acc: 0.9375 (0.9554)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [3]  [3500/4500]  eta: 0:01:02  lr: 0.001185  loss: 0.2544 (0.2719)  class_acc: 0.9688 (0.9557)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [3]  [3600/4500]  eta: 0:00:56  lr: 0.001184  loss: 0.2577 (0.2718)  class_acc: 0.9688 (0.9558)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [3]  [3700/4500]  eta: 0:00:50  lr: 0.001183  loss: 0.2346 (0.2715)  class_acc: 1.0000 (0.9559)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [3]  [3800/4500]  eta: 0:00:43  lr: 0.001182  loss: 0.2612 (0.2716)  class_acc: 0.9375 (0.9560)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [3]  [3900/4500]  eta: 0:00:37  lr: 0.001181  loss: 0.2403 (0.2711)  class_acc: 0.9688 (0.9563)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [3]  [4000/4500]  eta: 0:00:31  lr: 0.001180  loss: 0.2775 (0.2709)  class_acc: 0.9688 (0.9565)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [3]  [4100/4500]  eta: 0:00:24  lr: 0.001179  loss: 0.2550 (0.2708)  class_acc: 0.9688 (0.9566)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [3]  [4200/4500]  eta: 0:00:18  lr: 0.001178  loss: 0.2398 (0.2706)  class_acc: 0.9688 (0.9567)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [3]  [4300/4500]  eta: 0:00:12  lr: 0.001177  loss: 0.2646 (0.2704)  class_acc: 0.9688 (0.9568)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [3]  [4400/4500]  eta: 0:00:06  lr: 0.001176  loss: 0.2471 (0.2703)  class_acc: 0.9688 (0.9569)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [3]  [4499/4500]  eta: 0:00:00  lr: 0.001175  loss: 0.2427 (0.2701)  class_acc: 0.9688 (0.9570)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [3] Total time: 0:04:41 (0.0625 s / it)
+Averaged stats: lr: 0.001175  loss: 0.2427 (0.2701)  class_acc: 0.9688 (0.9570)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:19  loss: 0.0513 (0.0513)  acc1: 1.0000 (1.0000)  time: 1.5959
+Test:  [49/50]  eta: 0:00:00  loss: 0.0422 (0.0530)  acc1: 1.0000 (0.9956)  time: 0.0172
+Test: Total time: 0:00:02 (0.0517 s / it)
+* Acc@1 99.56% loss 0.0530
+Accuracy of the model on the 1600 test images: 99.56%
+Max accuracy: 99.75%
+Epoch: [4]  [   0/4500]  eta: 2:33:57  lr: 0.001175  loss: 0.2969 (0.2969)  class_acc: 0.9688 (0.9688)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 2.0529
+Epoch: [4]  [ 100/4500]  eta: 0:06:05  lr: 0.001174  loss: 0.2694 (0.2659)  class_acc: 0.9688 (0.9598)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [4]  [ 200/4500]  eta: 0:05:14  lr: 0.001173  loss: 0.2504 (0.2604)  class_acc: 0.9688 (0.9632)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [4]  [ 300/4500]  eta: 0:04:52  lr: 0.001171  loss: 0.2380 (0.2622)  class_acc: 0.9688 (0.9617)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [4]  [ 400/4500]  eta: 0:04:40  lr: 0.001170  loss: 0.2720 (0.2642)  class_acc: 0.9375 (0.9610)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [4]  [ 500/4500]  eta: 0:04:29  lr: 0.001169  loss: 0.2498 (0.2645)  class_acc: 0.9688 (0.9613)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [4]  [ 600/4500]  eta: 0:04:21  lr: 0.001168  loss: 0.2291 (0.2635)  class_acc: 1.0000 (0.9620)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [4]  [ 700/4500]  eta: 0:04:12  lr: 0.001167  loss: 0.2317 (0.2629)  class_acc: 0.9688 (0.9621)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [4]  [ 800/4500]  eta: 0:04:03  lr: 0.001166  loss: 0.2387 (0.2623)  class_acc: 0.9688 (0.9624)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [4]  [ 900/4500]  eta: 0:03:55  lr: 0.001165  loss: 0.2447 (0.2625)  class_acc: 0.9688 (0.9624)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [4]  [1000/4500]  eta: 0:03:48  lr: 0.001163  loss: 0.2347 (0.2610)  class_acc: 0.9688 (0.9632)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [4]  [1100/4500]  eta: 0:03:41  lr: 0.001162  loss: 0.2834 (0.2618)  class_acc: 0.9375 (0.9626)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [4]  [1200/4500]  eta: 0:03:33  lr: 0.001161  loss: 0.2422 (0.2617)  class_acc: 0.9688 (0.9628)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [4]  [1300/4500]  eta: 0:03:26  lr: 0.001160  loss: 0.2448 (0.2610)  class_acc: 0.9688 (0.9630)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [4]  [1400/4500]  eta: 0:03:17  lr: 0.001159  loss: 0.2365 (0.2611)  class_acc: 0.9688 (0.9630)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [4]  [1500/4500]  eta: 0:03:10  lr: 0.001158  loss: 0.2473 (0.2611)  class_acc: 0.9688 (0.9629)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0562
+Epoch: [4]  [1600/4500]  eta: 0:03:02  lr: 0.001156  loss: 0.2592 (0.2609)  class_acc: 0.9375 (0.9626)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0536
+Epoch: [4]  [1700/4500]  eta: 0:02:56  lr: 0.001155  loss: 0.2340 (0.2606)  class_acc: 0.9688 (0.9629)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [4]  [1800/4500]  eta: 0:02:49  lr: 0.001154  loss: 0.2233 (0.2598)  class_acc: 0.9688 (0.9635)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [4]  [1900/4500]  eta: 0:02:43  lr: 0.001153  loss: 0.2318 (0.2592)  class_acc: 0.9688 (0.9638)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [4]  [2000/4500]  eta: 0:02:36  lr: 0.001151  loss: 0.2288 (0.2587)  class_acc: 0.9688 (0.9642)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0590
+Epoch: [4]  [2100/4500]  eta: 0:02:30  lr: 0.001150  loss: 0.2451 (0.2585)  class_acc: 0.9688 (0.9644)  min_lr: 0.0012 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [4]  [2200/4500]  eta: 0:02:24  lr: 0.001149  loss: 0.2553 (0.2585)  class_acc: 0.9688 (0.9643)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0678
+Epoch: [4]  [2300/4500]  eta: 0:02:18  lr: 0.001148  loss: 0.2634 (0.2583)  class_acc: 0.9375 (0.9644)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [4]  [2400/4500]  eta: 0:02:12  lr: 0.001146  loss: 0.2509 (0.2582)  class_acc: 0.9688 (0.9644)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [4]  [2500/4500]  eta: 0:02:06  lr: 0.001145  loss: 0.2362 (0.2579)  class_acc: 0.9688 (0.9646)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0679
+Epoch: [4]  [2600/4500]  eta: 0:01:59  lr: 0.001144  loss: 0.2596 (0.2580)  class_acc: 0.9688 (0.9645)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [4]  [2700/4500]  eta: 0:01:53  lr: 0.001143  loss: 0.2501 (0.2578)  class_acc: 0.9688 (0.9646)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [4]  [2800/4500]  eta: 0:01:47  lr: 0.001141  loss: 0.2420 (0.2579)  class_acc: 0.9688 (0.9645)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0670
+Epoch: [4]  [2900/4500]  eta: 0:01:40  lr: 0.001140  loss: 0.2364 (0.2581)  class_acc: 0.9688 (0.9644)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0659
+Epoch: [4]  [3000/4500]  eta: 0:01:34  lr: 0.001139  loss: 0.2219 (0.2581)  class_acc: 1.0000 (0.9643)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [4]  [3100/4500]  eta: 0:01:28  lr: 0.001137  loss: 0.2392 (0.2579)  class_acc: 0.9688 (0.9645)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [4]  [3200/4500]  eta: 0:01:22  lr: 0.001136  loss: 0.2324 (0.2579)  class_acc: 0.9688 (0.9644)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [4]  [3300/4500]  eta: 0:01:15  lr: 0.001135  loss: 0.2270 (0.2576)  class_acc: 0.9688 (0.9645)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [4]  [3400/4500]  eta: 0:01:09  lr: 0.001133  loss: 0.2411 (0.2575)  class_acc: 0.9688 (0.9646)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [4]  [3500/4500]  eta: 0:01:03  lr: 0.001132  loss: 0.2428 (0.2574)  class_acc: 0.9688 (0.9645)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [4]  [3600/4500]  eta: 0:00:56  lr: 0.001131  loss: 0.2596 (0.2573)  class_acc: 0.9688 (0.9646)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0595
+Epoch: [4]  [3700/4500]  eta: 0:00:50  lr: 0.001129  loss: 0.2414 (0.2570)  class_acc: 0.9688 (0.9647)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [4]  [3800/4500]  eta: 0:00:44  lr: 0.001128  loss: 0.2471 (0.2568)  class_acc: 0.9688 (0.9649)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [4]  [3900/4500]  eta: 0:00:37  lr: 0.001127  loss: 0.2509 (0.2568)  class_acc: 0.9688 (0.9649)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [4]  [4000/4500]  eta: 0:00:31  lr: 0.001125  loss: 0.2259 (0.2567)  class_acc: 0.9688 (0.9650)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [4]  [4100/4500]  eta: 0:00:25  lr: 0.001124  loss: 0.2398 (0.2564)  class_acc: 0.9688 (0.9651)  min_lr: 0.0011 (0.0012)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [4]  [4200/4500]  eta: 0:00:18  lr: 0.001123  loss: 0.2372 (0.2564)  class_acc: 0.9688 (0.9652)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [4]  [4300/4500]  eta: 0:00:12  lr: 0.001121  loss: 0.2133 (0.2564)  class_acc: 1.0000 (0.9653)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [4]  [4400/4500]  eta: 0:00:06  lr: 0.001120  loss: 0.2589 (0.2565)  class_acc: 0.9688 (0.9652)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0666
+Epoch: [4]  [4499/4500]  eta: 0:00:00  lr: 0.001118  loss: 0.2387 (0.2562)  class_acc: 0.9688 (0.9653)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [4] Total time: 0:04:43 (0.0629 s / it)
+Averaged stats: lr: 0.001118  loss: 0.2387 (0.2562)  class_acc: 0.9688 (0.9653)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:58  loss: 0.0354 (0.0354)  acc1: 1.0000 (1.0000)  time: 1.1696
+Test:  [49/50]  eta: 0:00:00  loss: 0.0641 (0.0548)  acc1: 1.0000 (0.9988)  time: 0.0174
+Test: Total time: 0:00:02 (0.0537 s / it)
+* Acc@1 99.88% loss 0.0548
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [5]  [   0/4500]  eta: 1:48:21  lr: 0.001118  loss: 0.2494 (0.2494)  class_acc: 0.9688 (0.9688)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 1.4449
+Epoch: [5]  [ 100/4500]  eta: 0:05:52  lr: 0.001117  loss: 0.2365 (0.2412)  class_acc: 0.9688 (0.9749)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [5]  [ 200/4500]  eta: 0:05:02  lr: 0.001115  loss: 0.2605 (0.2483)  class_acc: 0.9688 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [5]  [ 300/4500]  eta: 0:04:44  lr: 0.001114  loss: 0.2419 (0.2488)  class_acc: 0.9688 (0.9707)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0666
+Epoch: [5]  [ 400/4500]  eta: 0:04:32  lr: 0.001113  loss: 0.2349 (0.2481)  class_acc: 0.9688 (0.9707)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [5]  [ 500/4500]  eta: 0:04:22  lr: 0.001111  loss: 0.2332 (0.2481)  class_acc: 0.9688 (0.9705)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [5]  [ 600/4500]  eta: 0:04:13  lr: 0.001110  loss: 0.2392 (0.2484)  class_acc: 0.9688 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [5]  [ 700/4500]  eta: 0:04:06  lr: 0.001108  loss: 0.2194 (0.2495)  class_acc: 1.0000 (0.9697)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [5]  [ 800/4500]  eta: 0:03:59  lr: 0.001107  loss: 0.2627 (0.2499)  class_acc: 0.9688 (0.9698)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [5]  [ 900/4500]  eta: 0:03:52  lr: 0.001105  loss: 0.2310 (0.2500)  class_acc: 0.9688 (0.9695)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [5]  [1000/4500]  eta: 0:03:45  lr: 0.001104  loss: 0.2281 (0.2499)  class_acc: 0.9688 (0.9697)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [5]  [1100/4500]  eta: 0:03:38  lr: 0.001102  loss: 0.2399 (0.2496)  class_acc: 0.9688 (0.9696)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [5]  [1200/4500]  eta: 0:03:31  lr: 0.001101  loss: 0.2480 (0.2492)  class_acc: 0.9688 (0.9699)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [5]  [1300/4500]  eta: 0:03:25  lr: 0.001099  loss: 0.2484 (0.2491)  class_acc: 0.9688 (0.9699)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [5]  [1400/4500]  eta: 0:03:19  lr: 0.001098  loss: 0.2515 (0.2489)  class_acc: 0.9688 (0.9699)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [5]  [1500/4500]  eta: 0:03:12  lr: 0.001096  loss: 0.2396 (0.2490)  class_acc: 0.9688 (0.9698)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [5]  [1600/4500]  eta: 0:03:05  lr: 0.001095  loss: 0.2405 (0.2489)  class_acc: 0.9688 (0.9697)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [5]  [1700/4500]  eta: 0:02:58  lr: 0.001093  loss: 0.2271 (0.2488)  class_acc: 0.9688 (0.9697)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0681
+Epoch: [5]  [1800/4500]  eta: 0:02:52  lr: 0.001092  loss: 0.2196 (0.2485)  class_acc: 0.9688 (0.9699)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [5]  [1900/4500]  eta: 0:02:45  lr: 0.001090  loss: 0.2133 (0.2485)  class_acc: 1.0000 (0.9699)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [5]  [2000/4500]  eta: 0:02:39  lr: 0.001089  loss: 0.2245 (0.2481)  class_acc: 0.9688 (0.9701)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [5]  [2100/4500]  eta: 0:02:32  lr: 0.001087  loss: 0.2207 (0.2482)  class_acc: 1.0000 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [5]  [2200/4500]  eta: 0:02:26  lr: 0.001086  loss: 0.2364 (0.2482)  class_acc: 0.9688 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0585
+Epoch: [5]  [2300/4500]  eta: 0:02:18  lr: 0.001084  loss: 0.2248 (0.2479)  class_acc: 1.0000 (0.9702)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [5]  [2400/4500]  eta: 0:02:12  lr: 0.001083  loss: 0.2308 (0.2477)  class_acc: 0.9688 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [5]  [2500/4500]  eta: 0:02:06  lr: 0.001081  loss: 0.2179 (0.2479)  class_acc: 1.0000 (0.9702)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [5]  [2600/4500]  eta: 0:01:59  lr: 0.001079  loss: 0.2193 (0.2476)  class_acc: 1.0000 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [5]  [2700/4500]  eta: 0:01:53  lr: 0.001078  loss: 0.2314 (0.2475)  class_acc: 1.0000 (0.9704)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [5]  [2800/4500]  eta: 0:01:47  lr: 0.001076  loss: 0.2409 (0.2477)  class_acc: 0.9688 (0.9701)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [5]  [2900/4500]  eta: 0:01:40  lr: 0.001075  loss: 0.2258 (0.2477)  class_acc: 0.9688 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [5]  [3000/4500]  eta: 0:01:34  lr: 0.001073  loss: 0.2284 (0.2476)  class_acc: 0.9688 (0.9701)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [5]  [3100/4500]  eta: 0:01:28  lr: 0.001072  loss: 0.2588 (0.2477)  class_acc: 0.9688 (0.9701)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [5]  [3200/4500]  eta: 0:01:22  lr: 0.001070  loss: 0.2322 (0.2478)  class_acc: 0.9688 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [5]  [3300/4500]  eta: 0:01:15  lr: 0.001068  loss: 0.2315 (0.2477)  class_acc: 0.9688 (0.9700)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [5]  [3400/4500]  eta: 0:01:09  lr: 0.001067  loss: 0.2241 (0.2476)  class_acc: 0.9688 (0.9701)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0692
+Epoch: [5]  [3500/4500]  eta: 0:01:03  lr: 0.001065  loss: 0.2384 (0.2475)  class_acc: 0.9688 (0.9702)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0681
+Epoch: [5]  [3600/4500]  eta: 0:00:56  lr: 0.001063  loss: 0.2354 (0.2473)  class_acc: 0.9688 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0545
+Epoch: [5]  [3700/4500]  eta: 0:00:50  lr: 0.001062  loss: 0.2311 (0.2475)  class_acc: 0.9688 (0.9702)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [5]  [3800/4500]  eta: 0:00:44  lr: 0.001060  loss: 0.2238 (0.2474)  class_acc: 1.0000 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0645
+Epoch: [5]  [3900/4500]  eta: 0:00:37  lr: 0.001058  loss: 0.2210 (0.2473)  class_acc: 0.9688 (0.9704)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0677
+Epoch: [5]  [4000/4500]  eta: 0:00:31  lr: 0.001057  loss: 0.2162 (0.2473)  class_acc: 1.0000 (0.9704)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [5]  [4100/4500]  eta: 0:00:25  lr: 0.001055  loss: 0.2328 (0.2474)  class_acc: 0.9688 (0.9703)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [5]  [4200/4500]  eta: 0:00:18  lr: 0.001054  loss: 0.2539 (0.2472)  class_acc: 0.9688 (0.9704)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [5]  [4300/4500]  eta: 0:00:12  lr: 0.001052  loss: 0.2354 (0.2472)  class_acc: 0.9688 (0.9704)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [5]  [4400/4500]  eta: 0:00:06  lr: 0.001050  loss: 0.2244 (0.2470)  class_acc: 0.9688 (0.9705)  min_lr: 0.0011 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0582
+Epoch: [5]  [4499/4500]  eta: 0:00:00  lr: 0.001048  loss: 0.2378 (0.2469)  class_acc: 0.9688 (0.9706)  min_lr: 0.0010 (0.0011)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [5] Total time: 0:04:43 (0.0631 s / it)
+Averaged stats: lr: 0.001048  loss: 0.2378 (0.2469)  class_acc: 0.9688 (0.9706)  min_lr: 0.0010 (0.0011)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:03  loss: 0.0522 (0.0522)  acc1: 1.0000 (1.0000)  time: 1.2799
+Test:  [49/50]  eta: 0:00:00  loss: 0.0391 (0.0493)  acc1: 1.0000 (0.9988)  time: 0.0171
+Test: Total time: 0:00:02 (0.0521 s / it)
+* Acc@1 99.88% loss 0.0493
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [6]  [   0/4500]  eta: 2:13:00  lr: 0.001048  loss: 0.2399 (0.2399)  class_acc: 0.9688 (0.9688)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 1.7735
+Epoch: [6]  [ 100/4500]  eta: 0:06:02  lr: 0.001047  loss: 0.2212 (0.2438)  class_acc: 1.0000 (0.9731)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [6]  [ 200/4500]  eta: 0:05:06  lr: 0.001045  loss: 0.2361 (0.2444)  class_acc: 0.9688 (0.9729)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [6]  [ 300/4500]  eta: 0:04:48  lr: 0.001043  loss: 0.2195 (0.2417)  class_acc: 0.9688 (0.9753)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [6]  [ 400/4500]  eta: 0:04:35  lr: 0.001042  loss: 0.2125 (0.2410)  class_acc: 1.0000 (0.9758)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [6]  [ 500/4500]  eta: 0:04:26  lr: 0.001040  loss: 0.2370 (0.2418)  class_acc: 0.9688 (0.9753)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [6]  [ 600/4500]  eta: 0:04:17  lr: 0.001038  loss: 0.2162 (0.2433)  class_acc: 1.0000 (0.9742)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [6]  [ 700/4500]  eta: 0:04:08  lr: 0.001037  loss: 0.2394 (0.2442)  class_acc: 0.9688 (0.9734)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [6]  [ 800/4500]  eta: 0:04:01  lr: 0.001035  loss: 0.2198 (0.2453)  class_acc: 1.0000 (0.9732)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [6]  [ 900/4500]  eta: 0:03:53  lr: 0.001033  loss: 0.2230 (0.2451)  class_acc: 1.0000 (0.9733)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [6]  [1000/4500]  eta: 0:03:45  lr: 0.001031  loss: 0.2368 (0.2453)  class_acc: 0.9688 (0.9730)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0590
+Epoch: [6]  [1100/4500]  eta: 0:03:38  lr: 0.001030  loss: 0.2144 (0.2441)  class_acc: 1.0000 (0.9737)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [6]  [1200/4500]  eta: 0:03:31  lr: 0.001028  loss: 0.2231 (0.2440)  class_acc: 0.9688 (0.9738)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [6]  [1300/4500]  eta: 0:03:25  lr: 0.001026  loss: 0.2250 (0.2439)  class_acc: 0.9688 (0.9737)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [6]  [1400/4500]  eta: 0:03:18  lr: 0.001024  loss: 0.2274 (0.2440)  class_acc: 1.0000 (0.9737)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [6]  [1500/4500]  eta: 0:03:11  lr: 0.001023  loss: 0.2313 (0.2438)  class_acc: 0.9688 (0.9738)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [6]  [1600/4500]  eta: 0:03:04  lr: 0.001021  loss: 0.2254 (0.2435)  class_acc: 0.9688 (0.9740)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0686
+Epoch: [6]  [1700/4500]  eta: 0:02:59  lr: 0.001019  loss: 0.2211 (0.2432)  class_acc: 1.0000 (0.9742)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0685
+Epoch: [6]  [1800/4500]  eta: 0:02:53  lr: 0.001017  loss: 0.2261 (0.2431)  class_acc: 0.9688 (0.9744)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [6]  [1900/4500]  eta: 0:02:46  lr: 0.001015  loss: 0.2352 (0.2430)  class_acc: 0.9688 (0.9743)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [6]  [2000/4500]  eta: 0:02:40  lr: 0.001014  loss: 0.2295 (0.2430)  class_acc: 0.9688 (0.9743)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [6]  [2100/4500]  eta: 0:02:33  lr: 0.001012  loss: 0.2196 (0.2431)  class_acc: 1.0000 (0.9742)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [6]  [2200/4500]  eta: 0:02:27  lr: 0.001010  loss: 0.2232 (0.2429)  class_acc: 0.9688 (0.9743)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [6]  [2300/4500]  eta: 0:02:20  lr: 0.001008  loss: 0.2246 (0.2428)  class_acc: 1.0000 (0.9743)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0661
+Epoch: [6]  [2400/4500]  eta: 0:02:14  lr: 0.001006  loss: 0.2162 (0.2426)  class_acc: 1.0000 (0.9744)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [6]  [2500/4500]  eta: 0:02:07  lr: 0.001005  loss: 0.2496 (0.2424)  class_acc: 0.9688 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0691
+Epoch: [6]  [2600/4500]  eta: 0:02:01  lr: 0.001003  loss: 0.2295 (0.2425)  class_acc: 0.9688 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [6]  [2700/4500]  eta: 0:01:55  lr: 0.001001  loss: 0.2152 (0.2424)  class_acc: 1.0000 (0.9746)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [6]  [2800/4500]  eta: 0:01:48  lr: 0.000999  loss: 0.2448 (0.2427)  class_acc: 0.9688 (0.9744)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [6]  [2900/4500]  eta: 0:01:42  lr: 0.000997  loss: 0.2192 (0.2426)  class_acc: 1.0000 (0.9744)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [6]  [3000/4500]  eta: 0:01:35  lr: 0.000995  loss: 0.2584 (0.2429)  class_acc: 0.9688 (0.9742)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [6]  [3100/4500]  eta: 0:01:29  lr: 0.000993  loss: 0.2142 (0.2427)  class_acc: 1.0000 (0.9743)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [6]  [3200/4500]  eta: 0:01:22  lr: 0.000992  loss: 0.2294 (0.2426)  class_acc: 0.9688 (0.9744)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [6]  [3300/4500]  eta: 0:01:16  lr: 0.000990  loss: 0.2319 (0.2426)  class_acc: 0.9688 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [6]  [3400/4500]  eta: 0:01:10  lr: 0.000988  loss: 0.2197 (0.2426)  class_acc: 1.0000 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [6]  [3500/4500]  eta: 0:01:03  lr: 0.000986  loss: 0.2622 (0.2425)  class_acc: 0.9688 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [6]  [3600/4500]  eta: 0:00:57  lr: 0.000984  loss: 0.2244 (0.2423)  class_acc: 0.9688 (0.9746)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [6]  [3700/4500]  eta: 0:00:50  lr: 0.000982  loss: 0.2241 (0.2423)  class_acc: 0.9688 (0.9746)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [6]  [3800/4500]  eta: 0:00:44  lr: 0.000980  loss: 0.2240 (0.2422)  class_acc: 0.9688 (0.9745)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [6]  [3900/4500]  eta: 0:00:38  lr: 0.000979  loss: 0.2205 (0.2421)  class_acc: 1.0000 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [6]  [4000/4500]  eta: 0:00:31  lr: 0.000977  loss: 0.2359 (0.2421)  class_acc: 0.9688 (0.9746)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [6]  [4100/4500]  eta: 0:00:25  lr: 0.000975  loss: 0.2167 (0.2420)  class_acc: 1.0000 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [6]  [4200/4500]  eta: 0:00:18  lr: 0.000973  loss: 0.2324 (0.2419)  class_acc: 0.9688 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [6]  [4300/4500]  eta: 0:00:12  lr: 0.000971  loss: 0.2263 (0.2419)  class_acc: 0.9688 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [6]  [4400/4500]  eta: 0:00:06  lr: 0.000969  loss: 0.2175 (0.2419)  class_acc: 1.0000 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0665
+Epoch: [6]  [4499/4500]  eta: 0:00:00  lr: 0.000967  loss: 0.2386 (0.2419)  class_acc: 0.9688 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [6] Total time: 0:04:44 (0.0631 s / it)
+Averaged stats: lr: 0.000967  loss: 0.2386 (0.2419)  class_acc: 0.9688 (0.9747)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:17  loss: 0.0518 (0.0518)  acc1: 1.0000 (1.0000)  time: 1.5594
+Test:  [49/50]  eta: 0:00:00  loss: 0.0374 (0.0489)  acc1: 1.0000 (0.9988)  time: 0.0176
+Test: Total time: 0:00:02 (0.0521 s / it)
+* Acc@1 99.88% loss 0.0489
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [7]  [   0/4500]  eta: 2:12:47  lr: 0.000967  loss: 0.2765 (0.2765)  class_acc: 0.9375 (0.9375)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 1.7704
+Epoch: [7]  [ 100/4500]  eta: 0:06:01  lr: 0.000965  loss: 0.2229 (0.2461)  class_acc: 0.9688 (0.9728)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [7]  [ 200/4500]  eta: 0:05:10  lr: 0.000963  loss: 0.2348 (0.2430)  class_acc: 0.9688 (0.9733)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [7]  [ 300/4500]  eta: 0:04:52  lr: 0.000961  loss: 0.2318 (0.2414)  class_acc: 0.9688 (0.9734)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [7]  [ 400/4500]  eta: 0:04:38  lr: 0.000959  loss: 0.2152 (0.2406)  class_acc: 1.0000 (0.9740)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [7]  [ 500/4500]  eta: 0:04:26  lr: 0.000957  loss: 0.2150 (0.2398)  class_acc: 1.0000 (0.9749)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [7]  [ 600/4500]  eta: 0:04:17  lr: 0.000955  loss: 0.2219 (0.2391)  class_acc: 1.0000 (0.9755)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [7]  [ 700/4500]  eta: 0:04:08  lr: 0.000954  loss: 0.2383 (0.2389)  class_acc: 0.9688 (0.9759)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [7]  [ 800/4500]  eta: 0:04:00  lr: 0.000952  loss: 0.2241 (0.2391)  class_acc: 0.9688 (0.9760)  min_lr: 0.0010 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [7]  [ 900/4500]  eta: 0:03:52  lr: 0.000950  loss: 0.2172 (0.2390)  class_acc: 1.0000 (0.9761)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0586
+Epoch: [7]  [1000/4500]  eta: 0:03:45  lr: 0.000948  loss: 0.2125 (0.2390)  class_acc: 1.0000 (0.9759)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [7]  [1100/4500]  eta: 0:03:38  lr: 0.000946  loss: 0.2207 (0.2385)  class_acc: 1.0000 (0.9764)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [7]  [1200/4500]  eta: 0:03:31  lr: 0.000944  loss: 0.2307 (0.2390)  class_acc: 0.9688 (0.9760)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0660
+Epoch: [7]  [1300/4500]  eta: 0:03:24  lr: 0.000942  loss: 0.2324 (0.2391)  class_acc: 0.9688 (0.9760)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [7]  [1400/4500]  eta: 0:03:18  lr: 0.000940  loss: 0.2188 (0.2394)  class_acc: 0.9688 (0.9758)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [7]  [1500/4500]  eta: 0:03:10  lr: 0.000938  loss: 0.2283 (0.2390)  class_acc: 0.9688 (0.9760)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [7]  [1600/4500]  eta: 0:03:04  lr: 0.000936  loss: 0.2331 (0.2388)  class_acc: 0.9688 (0.9762)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [7]  [1700/4500]  eta: 0:02:57  lr: 0.000934  loss: 0.2230 (0.2386)  class_acc: 0.9688 (0.9762)  min_lr: 0.0009 (0.0010)  weight_decay: 0.0100 (0.0100)  time: 0.0680
+Epoch: [7]  [1800/4500]  eta: 0:02:51  lr: 0.000932  loss: 0.2182 (0.2389)  class_acc: 1.0000 (0.9759)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [7]  [1900/4500]  eta: 0:02:45  lr: 0.000930  loss: 0.2269 (0.2388)  class_acc: 0.9688 (0.9760)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0662
+Epoch: [7]  [2000/4500]  eta: 0:02:39  lr: 0.000928  loss: 0.2306 (0.2388)  class_acc: 0.9688 (0.9761)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [7]  [2100/4500]  eta: 0:02:32  lr: 0.000926  loss: 0.2189 (0.2384)  class_acc: 1.0000 (0.9763)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [7]  [2200/4500]  eta: 0:02:25  lr: 0.000924  loss: 0.2199 (0.2383)  class_acc: 0.9688 (0.9763)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [7]  [2300/4500]  eta: 0:02:19  lr: 0.000922  loss: 0.2203 (0.2383)  class_acc: 1.0000 (0.9763)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [7]  [2400/4500]  eta: 0:02:12  lr: 0.000920  loss: 0.2137 (0.2381)  class_acc: 1.0000 (0.9764)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [7]  [2500/4500]  eta: 0:02:06  lr: 0.000918  loss: 0.2227 (0.2377)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [7]  [2600/4500]  eta: 0:02:00  lr: 0.000916  loss: 0.2192 (0.2378)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [7]  [2700/4500]  eta: 0:01:53  lr: 0.000914  loss: 0.2353 (0.2377)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [7]  [2800/4500]  eta: 0:01:47  lr: 0.000912  loss: 0.2266 (0.2378)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [7]  [2900/4500]  eta: 0:01:40  lr: 0.000910  loss: 0.2144 (0.2379)  class_acc: 1.0000 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [7]  [3000/4500]  eta: 0:01:34  lr: 0.000907  loss: 0.2435 (0.2379)  class_acc: 0.9688 (0.9765)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0563
+Epoch: [7]  [3100/4500]  eta: 0:01:27  lr: 0.000905  loss: 0.2197 (0.2379)  class_acc: 1.0000 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [7]  [3200/4500]  eta: 0:01:21  lr: 0.000903  loss: 0.2251 (0.2378)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [7]  [3300/4500]  eta: 0:01:15  lr: 0.000901  loss: 0.2198 (0.2378)  class_acc: 0.9688 (0.9766)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [7]  [3400/4500]  eta: 0:01:09  lr: 0.000899  loss: 0.2172 (0.2375)  class_acc: 1.0000 (0.9768)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [7]  [3500/4500]  eta: 0:01:02  lr: 0.000897  loss: 0.2265 (0.2375)  class_acc: 0.9688 (0.9768)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [7]  [3600/4500]  eta: 0:00:56  lr: 0.000895  loss: 0.2204 (0.2373)  class_acc: 0.9688 (0.9770)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [7]  [3700/4500]  eta: 0:00:50  lr: 0.000893  loss: 0.2132 (0.2372)  class_acc: 1.0000 (0.9771)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [7]  [3800/4500]  eta: 0:00:44  lr: 0.000891  loss: 0.2294 (0.2372)  class_acc: 0.9688 (0.9770)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0698
+Epoch: [7]  [3900/4500]  eta: 0:00:37  lr: 0.000889  loss: 0.2379 (0.2371)  class_acc: 0.9688 (0.9770)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [7]  [4000/4500]  eta: 0:00:31  lr: 0.000887  loss: 0.2099 (0.2369)  class_acc: 1.0000 (0.9772)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [7]  [4100/4500]  eta: 0:00:25  lr: 0.000885  loss: 0.2332 (0.2368)  class_acc: 0.9688 (0.9772)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [7]  [4200/4500]  eta: 0:00:18  lr: 0.000883  loss: 0.2042 (0.2366)  class_acc: 1.0000 (0.9773)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [7]  [4300/4500]  eta: 0:00:12  lr: 0.000881  loss: 0.2305 (0.2366)  class_acc: 0.9688 (0.9773)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [7]  [4400/4500]  eta: 0:00:06  lr: 0.000878  loss: 0.2187 (0.2367)  class_acc: 1.0000 (0.9772)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [7]  [4499/4500]  eta: 0:00:00  lr: 0.000876  loss: 0.2164 (0.2367)  class_acc: 0.9688 (0.9772)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0575
+Epoch: [7] Total time: 0:04:43 (0.0629 s / it)
+Averaged stats: lr: 0.000876  loss: 0.2164 (0.2367)  class_acc: 0.9688 (0.9772)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:06  loss: 0.0473 (0.0473)  acc1: 1.0000 (1.0000)  time: 1.3310
+Test:  [49/50]  eta: 0:00:00  loss: 0.0493 (0.0534)  acc1: 1.0000 (0.9981)  time: 0.0178
+Test: Total time: 0:00:02 (0.0525 s / it)
+* Acc@1 99.81% loss 0.0534
+Accuracy of the model on the 1600 test images: 99.81%
+Max accuracy: 99.88%
+Epoch: [8]  [   0/4500]  eta: 1:43:44  lr: 0.000876  loss: 0.2287 (0.2287)  class_acc: 1.0000 (1.0000)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 1.3833
+Epoch: [8]  [ 100/4500]  eta: 0:05:51  lr: 0.000874  loss: 0.2102 (0.2287)  class_acc: 1.0000 (0.9824)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [8]  [ 200/4500]  eta: 0:05:07  lr: 0.000872  loss: 0.2192 (0.2330)  class_acc: 0.9688 (0.9804)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0661
+Epoch: [8]  [ 300/4500]  eta: 0:04:48  lr: 0.000870  loss: 0.2169 (0.2342)  class_acc: 0.9688 (0.9790)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [8]  [ 400/4500]  eta: 0:04:34  lr: 0.000868  loss: 0.2267 (0.2331)  class_acc: 0.9688 (0.9794)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [8]  [ 500/4500]  eta: 0:04:21  lr: 0.000866  loss: 0.2314 (0.2338)  class_acc: 0.9688 (0.9787)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [8]  [ 600/4500]  eta: 0:04:12  lr: 0.000864  loss: 0.2138 (0.2330)  class_acc: 1.0000 (0.9792)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [8]  [ 700/4500]  eta: 0:04:05  lr: 0.000862  loss: 0.2133 (0.2326)  class_acc: 1.0000 (0.9795)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [8]  [ 800/4500]  eta: 0:03:56  lr: 0.000859  loss: 0.2186 (0.2324)  class_acc: 0.9688 (0.9798)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0575
+Epoch: [8]  [ 900/4500]  eta: 0:03:49  lr: 0.000857  loss: 0.2145 (0.2326)  class_acc: 1.0000 (0.9798)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [8]  [1000/4500]  eta: 0:03:42  lr: 0.000855  loss: 0.2137 (0.2323)  class_acc: 1.0000 (0.9800)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [8]  [1100/4500]  eta: 0:03:35  lr: 0.000853  loss: 0.2113 (0.2324)  class_acc: 1.0000 (0.9802)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [8]  [1200/4500]  eta: 0:03:28  lr: 0.000851  loss: 0.2085 (0.2325)  class_acc: 1.0000 (0.9800)  min_lr: 0.0009 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [8]  [1300/4500]  eta: 0:03:21  lr: 0.000849  loss: 0.2220 (0.2329)  class_acc: 0.9688 (0.9798)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [8]  [1400/4500]  eta: 0:03:14  lr: 0.000847  loss: 0.2170 (0.2329)  class_acc: 0.9688 (0.9797)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [8]  [1500/4500]  eta: 0:03:08  lr: 0.000844  loss: 0.2307 (0.2329)  class_acc: 0.9688 (0.9797)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [8]  [1600/4500]  eta: 0:03:02  lr: 0.000842  loss: 0.2106 (0.2330)  class_acc: 1.0000 (0.9796)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [8]  [1700/4500]  eta: 0:02:55  lr: 0.000840  loss: 0.2177 (0.2329)  class_acc: 0.9688 (0.9796)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [8]  [1800/4500]  eta: 0:02:49  lr: 0.000838  loss: 0.2092 (0.2326)  class_acc: 1.0000 (0.9798)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [8]  [1900/4500]  eta: 0:02:43  lr: 0.000836  loss: 0.2155 (0.2326)  class_acc: 1.0000 (0.9798)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0641
+Epoch: [8]  [2000/4500]  eta: 0:02:37  lr: 0.000834  loss: 0.2169 (0.2327)  class_acc: 1.0000 (0.9797)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [8]  [2100/4500]  eta: 0:02:30  lr: 0.000832  loss: 0.2149 (0.2328)  class_acc: 1.0000 (0.9798)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [8]  [2200/4500]  eta: 0:02:24  lr: 0.000829  loss: 0.2102 (0.2330)  class_acc: 1.0000 (0.9797)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [8]  [2300/4500]  eta: 0:02:17  lr: 0.000827  loss: 0.2088 (0.2328)  class_acc: 1.0000 (0.9798)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0578
+Epoch: [8]  [2400/4500]  eta: 0:02:11  lr: 0.000825  loss: 0.2225 (0.2328)  class_acc: 0.9688 (0.9797)  min_lr: 0.0008 (0.0009)  weight_decay: 0.0100 (0.0100)  time: 0.0645
+Epoch: [8]  [2500/4500]  eta: 0:02:05  lr: 0.000823  loss: 0.2188 (0.2331)  class_acc: 1.0000 (0.9796)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [8]  [2600/4500]  eta: 0:01:58  lr: 0.000821  loss: 0.2180 (0.2332)  class_acc: 1.0000 (0.9795)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [8]  [2700/4500]  eta: 0:01:52  lr: 0.000818  loss: 0.2110 (0.2332)  class_acc: 1.0000 (0.9795)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [8]  [2800/4500]  eta: 0:01:46  lr: 0.000816  loss: 0.2176 (0.2330)  class_acc: 0.9688 (0.9796)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [8]  [2900/4500]  eta: 0:01:39  lr: 0.000814  loss: 0.2183 (0.2329)  class_acc: 1.0000 (0.9797)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [8]  [3000/4500]  eta: 0:01:33  lr: 0.000812  loss: 0.2275 (0.2329)  class_acc: 0.9688 (0.9796)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0536
+Epoch: [8]  [3100/4500]  eta: 0:01:27  lr: 0.000810  loss: 0.2102 (0.2330)  class_acc: 1.0000 (0.9797)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [8]  [3200/4500]  eta: 0:01:20  lr: 0.000808  loss: 0.2200 (0.2328)  class_acc: 0.9688 (0.9798)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [8]  [3300/4500]  eta: 0:01:14  lr: 0.000805  loss: 0.2098 (0.2328)  class_acc: 1.0000 (0.9798)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [8]  [3400/4500]  eta: 0:01:08  lr: 0.000803  loss: 0.2189 (0.2326)  class_acc: 1.0000 (0.9799)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [8]  [3500/4500]  eta: 0:01:02  lr: 0.000801  loss: 0.2088 (0.2325)  class_acc: 1.0000 (0.9800)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [8]  [3600/4500]  eta: 0:00:55  lr: 0.000799  loss: 0.2073 (0.2324)  class_acc: 1.0000 (0.9799)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [8]  [3700/4500]  eta: 0:00:49  lr: 0.000797  loss: 0.2187 (0.2322)  class_acc: 0.9688 (0.9801)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [8]  [3800/4500]  eta: 0:00:43  lr: 0.000794  loss: 0.2249 (0.2321)  class_acc: 0.9688 (0.9801)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [8]  [3900/4500]  eta: 0:00:37  lr: 0.000792  loss: 0.2119 (0.2321)  class_acc: 1.0000 (0.9801)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [8]  [4000/4500]  eta: 0:00:31  lr: 0.000790  loss: 0.2278 (0.2320)  class_acc: 0.9688 (0.9802)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [8]  [4100/4500]  eta: 0:00:24  lr: 0.000788  loss: 0.2222 (0.2319)  class_acc: 0.9688 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0551
+Epoch: [8]  [4200/4500]  eta: 0:00:18  lr: 0.000785  loss: 0.2070 (0.2318)  class_acc: 1.0000 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [8]  [4300/4500]  eta: 0:00:12  lr: 0.000783  loss: 0.2221 (0.2319)  class_acc: 0.9688 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [8]  [4400/4500]  eta: 0:00:06  lr: 0.000781  loss: 0.2432 (0.2319)  class_acc: 0.9688 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0594
+Epoch: [8]  [4499/4500]  eta: 0:00:00  lr: 0.000779  loss: 0.2108 (0.2318)  class_acc: 1.0000 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [8] Total time: 0:04:39 (0.0621 s / it)
+Averaged stats: lr: 0.000779  loss: 0.2108 (0.2318)  class_acc: 1.0000 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:04  loss: 0.0399 (0.0399)  acc1: 1.0000 (1.0000)  time: 1.2950
+Test:  [49/50]  eta: 0:00:00  loss: 0.0551 (0.0496)  acc1: 1.0000 (0.9988)  time: 0.0178
+Test: Total time: 0:00:03 (0.0603 s / it)
+* Acc@1 99.88% loss 0.0496
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [9]  [   0/4500]  eta: 2:06:23  lr: 0.000779  loss: 0.2187 (0.2187)  class_acc: 1.0000 (1.0000)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 1.6852
+Epoch: [9]  [ 100/4500]  eta: 0:06:23  lr: 0.000777  loss: 0.2078 (0.2256)  class_acc: 1.0000 (0.9848)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0676
+Epoch: [9]  [ 200/4500]  eta: 0:05:25  lr: 0.000774  loss: 0.2187 (0.2267)  class_acc: 0.9688 (0.9832)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [9]  [ 300/4500]  eta: 0:05:03  lr: 0.000772  loss: 0.2194 (0.2311)  class_acc: 1.0000 (0.9814)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [9]  [ 400/4500]  eta: 0:04:46  lr: 0.000770  loss: 0.2411 (0.2328)  class_acc: 0.9688 (0.9797)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [9]  [ 500/4500]  eta: 0:04:34  lr: 0.000768  loss: 0.2190 (0.2321)  class_acc: 0.9688 (0.9802)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0664
+Epoch: [9]  [ 600/4500]  eta: 0:04:26  lr: 0.000765  loss: 0.2021 (0.2319)  class_acc: 1.0000 (0.9806)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0655
+Epoch: [9]  [ 700/4500]  eta: 0:04:17  lr: 0.000763  loss: 0.2066 (0.2315)  class_acc: 1.0000 (0.9807)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [9]  [ 800/4500]  eta: 0:04:09  lr: 0.000761  loss: 0.2125 (0.2312)  class_acc: 1.0000 (0.9808)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0665
+Epoch: [9]  [ 900/4500]  eta: 0:04:00  lr: 0.000759  loss: 0.2323 (0.2318)  class_acc: 0.9688 (0.9803)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [9]  [1000/4500]  eta: 0:03:54  lr: 0.000756  loss: 0.2156 (0.2316)  class_acc: 1.0000 (0.9802)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0728
+Epoch: [9]  [1100/4500]  eta: 0:03:46  lr: 0.000754  loss: 0.2103 (0.2313)  class_acc: 1.0000 (0.9805)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [9]  [1200/4500]  eta: 0:03:38  lr: 0.000752  loss: 0.2168 (0.2312)  class_acc: 0.9688 (0.9804)  min_lr: 0.0008 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [9]  [1300/4500]  eta: 0:03:31  lr: 0.000750  loss: 0.2136 (0.2308)  class_acc: 1.0000 (0.9806)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0670
+Epoch: [9]  [1400/4500]  eta: 0:03:23  lr: 0.000747  loss: 0.2068 (0.2306)  class_acc: 1.0000 (0.9808)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [9]  [1500/4500]  eta: 0:03:16  lr: 0.000745  loss: 0.2155 (0.2302)  class_acc: 1.0000 (0.9811)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [9]  [1600/4500]  eta: 0:03:09  lr: 0.000743  loss: 0.2076 (0.2301)  class_acc: 1.0000 (0.9812)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [9]  [1700/4500]  eta: 0:03:01  lr: 0.000741  loss: 0.2205 (0.2301)  class_acc: 0.9688 (0.9812)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0582
+Epoch: [9]  [1800/4500]  eta: 0:02:54  lr: 0.000738  loss: 0.2133 (0.2301)  class_acc: 1.0000 (0.9813)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0592
+Epoch: [9]  [1900/4500]  eta: 0:02:47  lr: 0.000736  loss: 0.2178 (0.2296)  class_acc: 1.0000 (0.9815)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [9]  [2000/4500]  eta: 0:02:40  lr: 0.000734  loss: 0.2287 (0.2297)  class_acc: 0.9688 (0.9814)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [9]  [2100/4500]  eta: 0:02:33  lr: 0.000732  loss: 0.2133 (0.2298)  class_acc: 1.0000 (0.9813)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0533
+Epoch: [9]  [2200/4500]  eta: 0:02:26  lr: 0.000729  loss: 0.2141 (0.2298)  class_acc: 1.0000 (0.9814)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0553
+Epoch: [9]  [2300/4500]  eta: 0:02:19  lr: 0.000727  loss: 0.2102 (0.2299)  class_acc: 1.0000 (0.9813)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [9]  [2400/4500]  eta: 0:02:13  lr: 0.000725  loss: 0.2164 (0.2298)  class_acc: 1.0000 (0.9815)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [9]  [2500/4500]  eta: 0:02:06  lr: 0.000723  loss: 0.2052 (0.2296)  class_acc: 1.0000 (0.9816)  min_lr: 0.0007 (0.0008)  weight_decay: 0.0100 (0.0100)  time: 0.0538
+Epoch: [9]  [2600/4500]  eta: 0:02:00  lr: 0.000720  loss: 0.2089 (0.2296)  class_acc: 1.0000 (0.9816)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [9]  [2700/4500]  eta: 0:01:53  lr: 0.000718  loss: 0.2232 (0.2297)  class_acc: 0.9688 (0.9814)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [9]  [2800/4500]  eta: 0:01:47  lr: 0.000716  loss: 0.2204 (0.2296)  class_acc: 1.0000 (0.9815)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0563
+Epoch: [9]  [2900/4500]  eta: 0:01:40  lr: 0.000714  loss: 0.2104 (0.2295)  class_acc: 1.0000 (0.9815)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [9]  [3000/4500]  eta: 0:01:33  lr: 0.000711  loss: 0.2233 (0.2295)  class_acc: 1.0000 (0.9815)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0585
+Epoch: [9]  [3100/4500]  eta: 0:01:27  lr: 0.000709  loss: 0.2105 (0.2293)  class_acc: 1.0000 (0.9816)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0550
+Epoch: [9]  [3200/4500]  eta: 0:01:21  lr: 0.000707  loss: 0.2084 (0.2291)  class_acc: 1.0000 (0.9818)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [9]  [3300/4500]  eta: 0:01:14  lr: 0.000704  loss: 0.2048 (0.2290)  class_acc: 1.0000 (0.9819)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [9]  [3400/4500]  eta: 0:01:08  lr: 0.000702  loss: 0.2201 (0.2290)  class_acc: 0.9688 (0.9819)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [9]  [3500/4500]  eta: 0:01:02  lr: 0.000700  loss: 0.2170 (0.2289)  class_acc: 1.0000 (0.9819)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [9]  [3600/4500]  eta: 0:00:56  lr: 0.000698  loss: 0.2063 (0.2287)  class_acc: 1.0000 (0.9821)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [9]  [3700/4500]  eta: 0:00:49  lr: 0.000695  loss: 0.2091 (0.2287)  class_acc: 1.0000 (0.9820)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [9]  [3800/4500]  eta: 0:00:43  lr: 0.000693  loss: 0.2056 (0.2285)  class_acc: 1.0000 (0.9821)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [9]  [3900/4500]  eta: 0:00:37  lr: 0.000691  loss: 0.2036 (0.2283)  class_acc: 1.0000 (0.9823)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [9]  [4000/4500]  eta: 0:00:31  lr: 0.000688  loss: 0.2097 (0.2281)  class_acc: 1.0000 (0.9824)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [9]  [4100/4500]  eta: 0:00:24  lr: 0.000686  loss: 0.2292 (0.2281)  class_acc: 0.9688 (0.9825)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [9]  [4200/4500]  eta: 0:00:18  lr: 0.000684  loss: 0.2051 (0.2281)  class_acc: 1.0000 (0.9824)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [9]  [4300/4500]  eta: 0:00:12  lr: 0.000682  loss: 0.2093 (0.2279)  class_acc: 1.0000 (0.9826)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [9]  [4400/4500]  eta: 0:00:06  lr: 0.000679  loss: 0.2248 (0.2279)  class_acc: 1.0000 (0.9825)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [9]  [4499/4500]  eta: 0:00:00  lr: 0.000677  loss: 0.2134 (0.2279)  class_acc: 1.0000 (0.9826)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [9] Total time: 0:04:40 (0.0624 s / it)
+Averaged stats: lr: 0.000677  loss: 0.2134 (0.2279)  class_acc: 1.0000 (0.9826)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:02  loss: 0.0510 (0.0510)  acc1: 1.0000 (1.0000)  time: 1.2596
+Test:  [49/50]  eta: 0:00:00  loss: 0.0501 (0.0543)  acc1: 1.0000 (0.9988)  time: 0.0170
+Test: Total time: 0:00:02 (0.0511 s / it)
+* Acc@1 99.88% loss 0.0543
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [10]  [   0/4500]  eta: 2:35:24  lr: 0.000677  loss: 0.2326 (0.2326)  class_acc: 0.9688 (0.9688)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 2.0722
+Epoch: [10]  [ 100/4500]  eta: 0:06:10  lr: 0.000675  loss: 0.2065 (0.2290)  class_acc: 1.0000 (0.9790)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0697
+Epoch: [10]  [ 200/4500]  eta: 0:05:09  lr: 0.000672  loss: 0.2089 (0.2270)  class_acc: 1.0000 (0.9813)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [10]  [ 300/4500]  eta: 0:04:49  lr: 0.000670  loss: 0.2208 (0.2265)  class_acc: 0.9688 (0.9824)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [10]  [ 400/4500]  eta: 0:04:37  lr: 0.000668  loss: 0.2020 (0.2268)  class_acc: 1.0000 (0.9825)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [10]  [ 500/4500]  eta: 0:04:25  lr: 0.000666  loss: 0.2049 (0.2264)  class_acc: 1.0000 (0.9831)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [10]  [ 600/4500]  eta: 0:04:16  lr: 0.000663  loss: 0.2193 (0.2261)  class_acc: 0.9688 (0.9831)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0582
+Epoch: [10]  [ 700/4500]  eta: 0:04:07  lr: 0.000661  loss: 0.2121 (0.2254)  class_acc: 1.0000 (0.9835)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0576
+Epoch: [10]  [ 800/4500]  eta: 0:04:00  lr: 0.000659  loss: 0.2153 (0.2258)  class_acc: 1.0000 (0.9831)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [10]  [ 900/4500]  eta: 0:03:51  lr: 0.000656  loss: 0.2102 (0.2262)  class_acc: 1.0000 (0.9830)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [10]  [1000/4500]  eta: 0:03:44  lr: 0.000654  loss: 0.2144 (0.2259)  class_acc: 1.0000 (0.9833)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [10]  [1100/4500]  eta: 0:03:37  lr: 0.000652  loss: 0.2143 (0.2260)  class_acc: 1.0000 (0.9833)  min_lr: 0.0007 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [10]  [1200/4500]  eta: 0:03:30  lr: 0.000650  loss: 0.2081 (0.2257)  class_acc: 1.0000 (0.9836)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [10]  [1300/4500]  eta: 0:03:23  lr: 0.000647  loss: 0.2072 (0.2259)  class_acc: 1.0000 (0.9836)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0660
+Epoch: [10]  [1400/4500]  eta: 0:03:16  lr: 0.000645  loss: 0.2148 (0.2258)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [10]  [1500/4500]  eta: 0:03:10  lr: 0.000643  loss: 0.2115 (0.2259)  class_acc: 1.0000 (0.9836)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [10]  [1600/4500]  eta: 0:03:03  lr: 0.000640  loss: 0.2117 (0.2258)  class_acc: 1.0000 (0.9837)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [10]  [1700/4500]  eta: 0:02:57  lr: 0.000638  loss: 0.2054 (0.2259)  class_acc: 1.0000 (0.9836)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [10]  [1800/4500]  eta: 0:02:50  lr: 0.000636  loss: 0.2018 (0.2256)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [10]  [1900/4500]  eta: 0:02:44  lr: 0.000634  loss: 0.2057 (0.2255)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [10]  [2000/4500]  eta: 0:02:37  lr: 0.000631  loss: 0.2006 (0.2257)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [10]  [2100/4500]  eta: 0:02:31  lr: 0.000629  loss: 0.2052 (0.2255)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [10]  [2200/4500]  eta: 0:02:24  lr: 0.000627  loss: 0.2116 (0.2256)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0661
+Epoch: [10]  [2300/4500]  eta: 0:02:18  lr: 0.000624  loss: 0.2119 (0.2258)  class_acc: 1.0000 (0.9837)  min_lr: 0.0006 (0.0007)  weight_decay: 0.0100 (0.0100)  time: 0.0660
+Epoch: [10]  [2400/4500]  eta: 0:02:12  lr: 0.000622  loss: 0.2073 (0.2259)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [10]  [2500/4500]  eta: 0:02:06  lr: 0.000620  loss: 0.2068 (0.2259)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0557
+Epoch: [10]  [2600/4500]  eta: 0:01:59  lr: 0.000617  loss: 0.2114 (0.2259)  class_acc: 1.0000 (0.9837)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [10]  [2700/4500]  eta: 0:01:53  lr: 0.000615  loss: 0.2102 (0.2260)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0662
+Epoch: [10]  [2800/4500]  eta: 0:01:47  lr: 0.000613  loss: 0.2234 (0.2259)  class_acc: 0.9688 (0.9837)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [10]  [2900/4500]  eta: 0:01:40  lr: 0.000611  loss: 0.2174 (0.2257)  class_acc: 0.9688 (0.9839)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [10]  [3000/4500]  eta: 0:01:34  lr: 0.000608  loss: 0.2151 (0.2258)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [10]  [3100/4500]  eta: 0:01:27  lr: 0.000606  loss: 0.2096 (0.2259)  class_acc: 1.0000 (0.9837)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0603
+Epoch: [10]  [3200/4500]  eta: 0:01:21  lr: 0.000604  loss: 0.2115 (0.2259)  class_acc: 1.0000 (0.9837)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [10]  [3300/4500]  eta: 0:01:15  lr: 0.000601  loss: 0.2029 (0.2258)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [10]  [3400/4500]  eta: 0:01:09  lr: 0.000599  loss: 0.2128 (0.2258)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [10]  [3500/4500]  eta: 0:01:02  lr: 0.000597  loss: 0.2146 (0.2257)  class_acc: 0.9688 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [10]  [3600/4500]  eta: 0:00:56  lr: 0.000595  loss: 0.2107 (0.2256)  class_acc: 1.0000 (0.9838)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [10]  [3700/4500]  eta: 0:00:50  lr: 0.000592  loss: 0.2056 (0.2256)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [10]  [3800/4500]  eta: 0:00:43  lr: 0.000590  loss: 0.2134 (0.2256)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [10]  [3900/4500]  eta: 0:00:37  lr: 0.000588  loss: 0.2098 (0.2255)  class_acc: 1.0000 (0.9839)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [10]  [4000/4500]  eta: 0:00:31  lr: 0.000585  loss: 0.2109 (0.2255)  class_acc: 1.0000 (0.9840)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [10]  [4100/4500]  eta: 0:00:24  lr: 0.000583  loss: 0.2020 (0.2254)  class_acc: 1.0000 (0.9840)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0538
+Epoch: [10]  [4200/4500]  eta: 0:00:18  lr: 0.000581  loss: 0.2171 (0.2254)  class_acc: 0.9688 (0.9840)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0577
+Epoch: [10]  [4300/4500]  eta: 0:00:12  lr: 0.000579  loss: 0.2054 (0.2253)  class_acc: 1.0000 (0.9841)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [10]  [4400/4500]  eta: 0:00:06  lr: 0.000576  loss: 0.2042 (0.2252)  class_acc: 1.0000 (0.9841)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [10]  [4499/4500]  eta: 0:00:00  lr: 0.000574  loss: 0.2134 (0.2253)  class_acc: 1.0000 (0.9841)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0595
+Epoch: [10] Total time: 0:04:40 (0.0623 s / it)
+Averaged stats: lr: 0.000574  loss: 0.2134 (0.2253)  class_acc: 1.0000 (0.9841)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:01  loss: 0.0438 (0.0438)  acc1: 1.0000 (1.0000)  time: 1.2269
+Test:  [49/50]  eta: 0:00:00  loss: 0.0515 (0.0500)  acc1: 1.0000 (0.9988)  time: 0.0177
+Test: Total time: 0:00:02 (0.0533 s / it)
+* Acc@1 99.88% loss 0.0500
+Accuracy of the model on the 1600 test images: 99.88%
+Max accuracy: 99.88%
+Epoch: [11]  [   0/4500]  eta: 2:06:26  lr: 0.000574  loss: 0.2003 (0.2003)  class_acc: 1.0000 (1.0000)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 1.6860
+Epoch: [11]  [ 100/4500]  eta: 0:05:59  lr: 0.000572  loss: 0.2096 (0.2257)  class_acc: 1.0000 (0.9842)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [11]  [ 200/4500]  eta: 0:05:11  lr: 0.000569  loss: 0.2044 (0.2232)  class_acc: 1.0000 (0.9863)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [11]  [ 300/4500]  eta: 0:04:52  lr: 0.000567  loss: 0.2045 (0.2230)  class_acc: 1.0000 (0.9865)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [11]  [ 400/4500]  eta: 0:04:38  lr: 0.000565  loss: 0.2114 (0.2227)  class_acc: 1.0000 (0.9864)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [11]  [ 500/4500]  eta: 0:04:26  lr: 0.000563  loss: 0.2268 (0.2233)  class_acc: 0.9688 (0.9856)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [11]  [ 600/4500]  eta: 0:04:16  lr: 0.000560  loss: 0.2106 (0.2244)  class_acc: 0.9688 (0.9847)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [11]  [ 700/4500]  eta: 0:04:07  lr: 0.000558  loss: 0.2190 (0.2239)  class_acc: 1.0000 (0.9850)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [11]  [ 800/4500]  eta: 0:03:57  lr: 0.000556  loss: 0.2047 (0.2243)  class_acc: 1.0000 (0.9847)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0577
+Epoch: [11]  [ 900/4500]  eta: 0:03:51  lr: 0.000553  loss: 0.2061 (0.2243)  class_acc: 1.0000 (0.9848)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [11]  [1000/4500]  eta: 0:03:43  lr: 0.000551  loss: 0.2078 (0.2244)  class_acc: 1.0000 (0.9847)  min_lr: 0.0006 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [11]  [1100/4500]  eta: 0:03:36  lr: 0.000549  loss: 0.2044 (0.2239)  class_acc: 1.0000 (0.9850)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [11]  [1200/4500]  eta: 0:03:30  lr: 0.000547  loss: 0.2065 (0.2233)  class_acc: 1.0000 (0.9855)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [11]  [1300/4500]  eta: 0:03:23  lr: 0.000544  loss: 0.2162 (0.2233)  class_acc: 0.9688 (0.9853)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [11]  [1400/4500]  eta: 0:03:17  lr: 0.000542  loss: 0.2242 (0.2237)  class_acc: 0.9688 (0.9850)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [11]  [1500/4500]  eta: 0:03:10  lr: 0.000540  loss: 0.2083 (0.2235)  class_acc: 1.0000 (0.9851)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [11]  [1600/4500]  eta: 0:03:03  lr: 0.000537  loss: 0.2068 (0.2233)  class_acc: 1.0000 (0.9854)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [11]  [1700/4500]  eta: 0:02:56  lr: 0.000535  loss: 0.2150 (0.2237)  class_acc: 1.0000 (0.9851)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [11]  [1800/4500]  eta: 0:02:49  lr: 0.000533  loss: 0.2137 (0.2235)  class_acc: 1.0000 (0.9852)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [11]  [1900/4500]  eta: 0:02:43  lr: 0.000531  loss: 0.2174 (0.2235)  class_acc: 1.0000 (0.9853)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [11]  [2000/4500]  eta: 0:02:37  lr: 0.000528  loss: 0.2103 (0.2234)  class_acc: 1.0000 (0.9854)  min_lr: 0.0005 (0.0006)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [11]  [2100/4500]  eta: 0:02:30  lr: 0.000526  loss: 0.2150 (0.2234)  class_acc: 1.0000 (0.9855)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [11]  [2200/4500]  eta: 0:02:24  lr: 0.000524  loss: 0.2042 (0.2232)  class_acc: 1.0000 (0.9856)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0659
+Epoch: [11]  [2300/4500]  eta: 0:02:17  lr: 0.000522  loss: 0.2026 (0.2231)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [11]  [2400/4500]  eta: 0:02:11  lr: 0.000519  loss: 0.2046 (0.2231)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [11]  [2500/4500]  eta: 0:02:05  lr: 0.000517  loss: 0.2067 (0.2231)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0669
+Epoch: [11]  [2600/4500]  eta: 0:01:59  lr: 0.000515  loss: 0.2072 (0.2232)  class_acc: 1.0000 (0.9856)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [11]  [2700/4500]  eta: 0:01:53  lr: 0.000513  loss: 0.2029 (0.2229)  class_acc: 1.0000 (0.9858)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [11]  [2800/4500]  eta: 0:01:46  lr: 0.000510  loss: 0.2104 (0.2229)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0572
+Epoch: [11]  [2900/4500]  eta: 0:01:40  lr: 0.000508  loss: 0.2078 (0.2229)  class_acc: 1.0000 (0.9856)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [11]  [3000/4500]  eta: 0:01:33  lr: 0.000506  loss: 0.2070 (0.2229)  class_acc: 1.0000 (0.9856)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [11]  [3100/4500]  eta: 0:01:27  lr: 0.000504  loss: 0.2053 (0.2229)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [11]  [3200/4500]  eta: 0:01:21  lr: 0.000501  loss: 0.2156 (0.2230)  class_acc: 0.9688 (0.9855)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [11]  [3300/4500]  eta: 0:01:14  lr: 0.000499  loss: 0.2052 (0.2228)  class_acc: 1.0000 (0.9856)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0543
+Epoch: [11]  [3400/4500]  eta: 0:01:08  lr: 0.000497  loss: 0.2026 (0.2228)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [11]  [3500/4500]  eta: 0:01:02  lr: 0.000495  loss: 0.2064 (0.2226)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0667
+Epoch: [11]  [3600/4500]  eta: 0:00:56  lr: 0.000492  loss: 0.2050 (0.2226)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [11]  [3700/4500]  eta: 0:00:49  lr: 0.000490  loss: 0.2135 (0.2226)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [11]  [3800/4500]  eta: 0:00:43  lr: 0.000488  loss: 0.2034 (0.2225)  class_acc: 1.0000 (0.9858)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [11]  [3900/4500]  eta: 0:00:37  lr: 0.000486  loss: 0.2075 (0.2223)  class_acc: 1.0000 (0.9859)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [11]  [4000/4500]  eta: 0:00:31  lr: 0.000483  loss: 0.2093 (0.2221)  class_acc: 1.0000 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [11]  [4100/4500]  eta: 0:00:24  lr: 0.000481  loss: 0.2062 (0.2221)  class_acc: 1.0000 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [11]  [4200/4500]  eta: 0:00:18  lr: 0.000479  loss: 0.2055 (0.2220)  class_acc: 1.0000 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0660
+Epoch: [11]  [4300/4500]  eta: 0:00:12  lr: 0.000477  loss: 0.2049 (0.2221)  class_acc: 1.0000 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [11]  [4400/4500]  eta: 0:00:06  lr: 0.000474  loss: 0.2056 (0.2221)  class_acc: 1.0000 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [11]  [4499/4500]  eta: 0:00:00  lr: 0.000472  loss: 0.2049 (0.2220)  class_acc: 1.0000 (0.9861)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [11] Total time: 0:04:41 (0.0625 s / it)
+Averaged stats: lr: 0.000472  loss: 0.2049 (0.2220)  class_acc: 1.0000 (0.9861)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:08  loss: 0.0398 (0.0398)  acc1: 1.0000 (1.0000)  time: 1.3785
+Test:  [49/50]  eta: 0:00:00  loss: 0.0506 (0.0499)  acc1: 1.0000 (0.9981)  time: 0.0175
+Test: Total time: 0:00:02 (0.0532 s / it)
+* Acc@1 99.81% loss 0.0499
+Accuracy of the model on the 1600 test images: 99.81%
+Max accuracy: 99.88%
+Epoch: [12]  [   0/4500]  eta: 2:36:56  lr: 0.000472  loss: 0.2840 (0.2840)  class_acc: 0.9688 (0.9688)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 2.0925
+Epoch: [12]  [ 100/4500]  eta: 0:06:07  lr: 0.000470  loss: 0.2141 (0.2254)  class_acc: 1.0000 (0.9839)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [12]  [ 200/4500]  eta: 0:05:11  lr: 0.000468  loss: 0.2128 (0.2235)  class_acc: 1.0000 (0.9843)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [12]  [ 300/4500]  eta: 0:04:51  lr: 0.000466  loss: 0.2096 (0.2239)  class_acc: 1.0000 (0.9846)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0641
+Epoch: [12]  [ 400/4500]  eta: 0:04:36  lr: 0.000463  loss: 0.2041 (0.2233)  class_acc: 1.0000 (0.9846)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [12]  [ 500/4500]  eta: 0:04:24  lr: 0.000461  loss: 0.2068 (0.2224)  class_acc: 1.0000 (0.9854)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [12]  [ 600/4500]  eta: 0:04:13  lr: 0.000459  loss: 0.2053 (0.2211)  class_acc: 1.0000 (0.9862)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0536
+Epoch: [12]  [ 700/4500]  eta: 0:04:05  lr: 0.000457  loss: 0.2112 (0.2214)  class_acc: 1.0000 (0.9857)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [12]  [ 800/4500]  eta: 0:03:58  lr: 0.000454  loss: 0.2062 (0.2210)  class_acc: 1.0000 (0.9861)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [12]  [ 900/4500]  eta: 0:03:51  lr: 0.000452  loss: 0.2204 (0.2213)  class_acc: 0.9688 (0.9860)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [12]  [1000/4500]  eta: 0:03:44  lr: 0.000450  loss: 0.2184 (0.2213)  class_acc: 0.9688 (0.9859)  min_lr: 0.0005 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [12]  [1100/4500]  eta: 0:03:37  lr: 0.000448  loss: 0.2015 (0.2212)  class_acc: 1.0000 (0.9858)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [12]  [1200/4500]  eta: 0:03:30  lr: 0.000446  loss: 0.2056 (0.2210)  class_acc: 1.0000 (0.9862)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [12]  [1300/4500]  eta: 0:03:22  lr: 0.000443  loss: 0.2089 (0.2209)  class_acc: 1.0000 (0.9861)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [12]  [1400/4500]  eta: 0:03:15  lr: 0.000441  loss: 0.2112 (0.2206)  class_acc: 1.0000 (0.9862)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [12]  [1500/4500]  eta: 0:03:09  lr: 0.000439  loss: 0.2059 (0.2204)  class_acc: 1.0000 (0.9864)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [12]  [1600/4500]  eta: 0:03:02  lr: 0.000437  loss: 0.2042 (0.2201)  class_acc: 1.0000 (0.9866)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [12]  [1700/4500]  eta: 0:02:56  lr: 0.000435  loss: 0.2004 (0.2197)  class_acc: 1.0000 (0.9868)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0667
+Epoch: [12]  [1800/4500]  eta: 0:02:49  lr: 0.000433  loss: 0.2041 (0.2196)  class_acc: 1.0000 (0.9870)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [12]  [1900/4500]  eta: 0:02:43  lr: 0.000430  loss: 0.2037 (0.2196)  class_acc: 1.0000 (0.9871)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [12]  [2000/4500]  eta: 0:02:37  lr: 0.000428  loss: 0.2079 (0.2198)  class_acc: 1.0000 (0.9870)  min_lr: 0.0004 (0.0005)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [12]  [2100/4500]  eta: 0:02:30  lr: 0.000426  loss: 0.2062 (0.2199)  class_acc: 1.0000 (0.9869)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [12]  [2200/4500]  eta: 0:02:24  lr: 0.000424  loss: 0.2065 (0.2199)  class_acc: 1.0000 (0.9870)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [12]  [2300/4500]  eta: 0:02:18  lr: 0.000422  loss: 0.2057 (0.2197)  class_acc: 1.0000 (0.9870)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [12]  [2400/4500]  eta: 0:02:11  lr: 0.000419  loss: 0.2030 (0.2193)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0555
+Epoch: [12]  [2500/4500]  eta: 0:02:04  lr: 0.000417  loss: 0.2119 (0.2195)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [12]  [2600/4500]  eta: 0:01:58  lr: 0.000415  loss: 0.2017 (0.2193)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0562
+Epoch: [12]  [2700/4500]  eta: 0:01:51  lr: 0.000413  loss: 0.2123 (0.2194)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [12]  [2800/4500]  eta: 0:01:45  lr: 0.000411  loss: 0.2077 (0.2193)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [12]  [2900/4500]  eta: 0:01:39  lr: 0.000409  loss: 0.2118 (0.2193)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [12]  [3000/4500]  eta: 0:01:33  lr: 0.000407  loss: 0.2108 (0.2194)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [12]  [3100/4500]  eta: 0:01:27  lr: 0.000404  loss: 0.2000 (0.2193)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [12]  [3200/4500]  eta: 0:01:21  lr: 0.000402  loss: 0.2046 (0.2193)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0672
+Epoch: [12]  [3300/4500]  eta: 0:01:14  lr: 0.000400  loss: 0.2070 (0.2194)  class_acc: 1.0000 (0.9872)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [12]  [3400/4500]  eta: 0:01:08  lr: 0.000398  loss: 0.2068 (0.2193)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [12]  [3500/4500]  eta: 0:01:02  lr: 0.000396  loss: 0.2050 (0.2194)  class_acc: 1.0000 (0.9872)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [12]  [3600/4500]  eta: 0:00:56  lr: 0.000394  loss: 0.2064 (0.2194)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [12]  [3700/4500]  eta: 0:00:49  lr: 0.000392  loss: 0.2081 (0.2194)  class_acc: 1.0000 (0.9873)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [12]  [3800/4500]  eta: 0:00:43  lr: 0.000389  loss: 0.2011 (0.2194)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [12]  [3900/4500]  eta: 0:00:37  lr: 0.000387  loss: 0.2016 (0.2193)  class_acc: 1.0000 (0.9874)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [12]  [4000/4500]  eta: 0:00:31  lr: 0.000385  loss: 0.2026 (0.2191)  class_acc: 1.0000 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [12]  [4100/4500]  eta: 0:00:24  lr: 0.000383  loss: 0.2158 (0.2191)  class_acc: 1.0000 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [12]  [4200/4500]  eta: 0:00:18  lr: 0.000381  loss: 0.2033 (0.2191)  class_acc: 1.0000 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [12]  [4300/4500]  eta: 0:00:12  lr: 0.000379  loss: 0.2099 (0.2191)  class_acc: 1.0000 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [12]  [4400/4500]  eta: 0:00:06  lr: 0.000377  loss: 0.2195 (0.2192)  class_acc: 1.0000 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [12]  [4499/4500]  eta: 0:00:00  lr: 0.000375  loss: 0.2198 (0.2191)  class_acc: 0.9688 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [12] Total time: 0:04:40 (0.0622 s / it)
+Averaged stats: lr: 0.000375  loss: 0.2198 (0.2191)  class_acc: 0.9688 (0.9876)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:57  loss: 0.0565 (0.0565)  acc1: 1.0000 (1.0000)  time: 1.1446
+Test:  [49/50]  eta: 0:00:00  loss: 0.0471 (0.0534)  acc1: 1.0000 (0.9994)  time: 0.0175
+Test: Total time: 0:00:02 (0.0516 s / it)
+* Acc@1 99.94% loss 0.0534
+Accuracy of the model on the 1600 test images: 99.94%
+Max accuracy: 99.94%
+Epoch: [13]  [   0/4500]  eta: 1:46:30  lr: 0.000375  loss: 0.2606 (0.2606)  class_acc: 0.9688 (0.9688)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 1.4201
+Epoch: [13]  [ 100/4500]  eta: 0:05:46  lr: 0.000373  loss: 0.2051 (0.2194)  class_acc: 1.0000 (0.9858)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0550
+Epoch: [13]  [ 200/4500]  eta: 0:04:50  lr: 0.000370  loss: 0.2037 (0.2179)  class_acc: 1.0000 (0.9871)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [13]  [ 300/4500]  eta: 0:04:32  lr: 0.000368  loss: 0.2048 (0.2168)  class_acc: 1.0000 (0.9890)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [13]  [ 400/4500]  eta: 0:04:14  lr: 0.000366  loss: 0.2072 (0.2174)  class_acc: 1.0000 (0.9889)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0560
+Epoch: [13]  [ 500/4500]  eta: 0:04:02  lr: 0.000364  loss: 0.2107 (0.2188)  class_acc: 1.0000 (0.9880)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0535
+Epoch: [13]  [ 600/4500]  eta: 0:03:51  lr: 0.000362  loss: 0.2051 (0.2179)  class_acc: 1.0000 (0.9884)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [13]  [ 700/4500]  eta: 0:03:45  lr: 0.000360  loss: 0.2007 (0.2173)  class_acc: 1.0000 (0.9888)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [13]  [ 800/4500]  eta: 0:03:40  lr: 0.000358  loss: 0.2031 (0.2175)  class_acc: 1.0000 (0.9887)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [13]  [ 900/4500]  eta: 0:03:35  lr: 0.000356  loss: 0.2039 (0.2178)  class_acc: 1.0000 (0.9885)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [13]  [1000/4500]  eta: 0:03:29  lr: 0.000354  loss: 0.2040 (0.2176)  class_acc: 1.0000 (0.9887)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0600
+Epoch: [13]  [1100/4500]  eta: 0:03:24  lr: 0.000352  loss: 0.2035 (0.2179)  class_acc: 1.0000 (0.9885)  min_lr: 0.0004 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [13]  [1200/4500]  eta: 0:03:20  lr: 0.000350  loss: 0.2000 (0.2173)  class_acc: 1.0000 (0.9888)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [13]  [1300/4500]  eta: 0:03:14  lr: 0.000348  loss: 0.2085 (0.2174)  class_acc: 1.0000 (0.9887)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [13]  [1400/4500]  eta: 0:03:09  lr: 0.000346  loss: 0.2013 (0.2169)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [13]  [1500/4500]  eta: 0:03:03  lr: 0.000344  loss: 0.2076 (0.2170)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [13]  [1600/4500]  eta: 0:02:57  lr: 0.000341  loss: 0.2056 (0.2171)  class_acc: 1.0000 (0.9890)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [13]  [1700/4500]  eta: 0:02:51  lr: 0.000339  loss: 0.2019 (0.2169)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0642
+Epoch: [13]  [1800/4500]  eta: 0:02:45  lr: 0.000337  loss: 0.2033 (0.2169)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [13]  [1900/4500]  eta: 0:02:40  lr: 0.000335  loss: 0.2028 (0.2171)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [13]  [2000/4500]  eta: 0:02:34  lr: 0.000333  loss: 0.1996 (0.2170)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [13]  [2100/4500]  eta: 0:02:27  lr: 0.000331  loss: 0.2044 (0.2170)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0537
+Epoch: [13]  [2200/4500]  eta: 0:02:20  lr: 0.000329  loss: 0.2179 (0.2170)  class_acc: 0.9688 (0.9891)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0532
+Epoch: [13]  [2300/4500]  eta: 0:02:14  lr: 0.000327  loss: 0.2015 (0.2170)  class_acc: 1.0000 (0.9890)  min_lr: 0.0003 (0.0004)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [13]  [2400/4500]  eta: 0:02:07  lr: 0.000325  loss: 0.2021 (0.2169)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0531
+Epoch: [13]  [2500/4500]  eta: 0:02:00  lr: 0.000323  loss: 0.2069 (0.2169)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0572
+Epoch: [13]  [2600/4500]  eta: 0:01:55  lr: 0.000321  loss: 0.2018 (0.2169)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [13]  [2700/4500]  eta: 0:01:49  lr: 0.000319  loss: 0.2092 (0.2170)  class_acc: 1.0000 (0.9890)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0689
+Epoch: [13]  [2800/4500]  eta: 0:01:43  lr: 0.000317  loss: 0.2014 (0.2169)  class_acc: 1.0000 (0.9890)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [13]  [2900/4500]  eta: 0:01:37  lr: 0.000315  loss: 0.2054 (0.2168)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [13]  [3000/4500]  eta: 0:01:31  lr: 0.000313  loss: 0.2074 (0.2167)  class_acc: 1.0000 (0.9891)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [13]  [3100/4500]  eta: 0:01:25  lr: 0.000311  loss: 0.2034 (0.2167)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [13]  [3200/4500]  eta: 0:01:19  lr: 0.000309  loss: 0.2020 (0.2167)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [13]  [3300/4500]  eta: 0:01:13  lr: 0.000307  loss: 0.2047 (0.2167)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0594
+Epoch: [13]  [3400/4500]  eta: 0:01:07  lr: 0.000305  loss: 0.2002 (0.2166)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0655
+Epoch: [13]  [3500/4500]  eta: 0:01:01  lr: 0.000303  loss: 0.2071 (0.2165)  class_acc: 1.0000 (0.9892)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0658
+Epoch: [13]  [3600/4500]  eta: 0:00:55  lr: 0.000301  loss: 0.2044 (0.2165)  class_acc: 1.0000 (0.9893)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [13]  [3700/4500]  eta: 0:00:49  lr: 0.000299  loss: 0.2031 (0.2163)  class_acc: 1.0000 (0.9893)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0647
+Epoch: [13]  [3800/4500]  eta: 0:00:43  lr: 0.000297  loss: 0.2008 (0.2163)  class_acc: 1.0000 (0.9894)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [13]  [3900/4500]  eta: 0:00:37  lr: 0.000296  loss: 0.2015 (0.2162)  class_acc: 1.0000 (0.9895)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [13]  [4000/4500]  eta: 0:00:30  lr: 0.000294  loss: 0.2042 (0.2162)  class_acc: 1.0000 (0.9895)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [13]  [4100/4500]  eta: 0:00:24  lr: 0.000292  loss: 0.2012 (0.2163)  class_acc: 1.0000 (0.9894)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [13]  [4200/4500]  eta: 0:00:18  lr: 0.000290  loss: 0.2025 (0.2163)  class_acc: 1.0000 (0.9895)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [13]  [4300/4500]  eta: 0:00:12  lr: 0.000288  loss: 0.2153 (0.2163)  class_acc: 1.0000 (0.9894)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [13]  [4400/4500]  eta: 0:00:06  lr: 0.000286  loss: 0.2038 (0.2163)  class_acc: 1.0000 (0.9894)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [13]  [4499/4500]  eta: 0:00:00  lr: 0.000284  loss: 0.2029 (0.2162)  class_acc: 1.0000 (0.9895)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0669
+Epoch: [13] Total time: 0:04:38 (0.0619 s / it)
+Averaged stats: lr: 0.000284  loss: 0.2029 (0.2162)  class_acc: 1.0000 (0.9895)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:03  loss: 0.0458 (0.0458)  acc1: 1.0000 (1.0000)  time: 1.2709
+Test:  [49/50]  eta: 0:00:00  loss: 0.0533 (0.0500)  acc1: 1.0000 (1.0000)  time: 0.0169
+Test: Total time: 0:00:02 (0.0526 s / it)
+* Acc@1 100.00% loss 0.0500
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [14]  [   0/4500]  eta: 2:14:53  lr: 0.000284  loss: 0.2008 (0.2008)  class_acc: 1.0000 (1.0000)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 1.7985
+Epoch: [14]  [ 100/4500]  eta: 0:06:06  lr: 0.000282  loss: 0.2012 (0.2148)  class_acc: 1.0000 (0.9898)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0648
+Epoch: [14]  [ 200/4500]  eta: 0:05:13  lr: 0.000280  loss: 0.2067 (0.2125)  class_acc: 1.0000 (0.9919)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [14]  [ 300/4500]  eta: 0:04:51  lr: 0.000278  loss: 0.1999 (0.2118)  class_acc: 1.0000 (0.9924)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [14]  [ 400/4500]  eta: 0:04:38  lr: 0.000276  loss: 0.2023 (0.2120)  class_acc: 1.0000 (0.9924)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [14]  [ 500/4500]  eta: 0:04:26  lr: 0.000274  loss: 0.2068 (0.2136)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [14]  [ 600/4500]  eta: 0:04:16  lr: 0.000272  loss: 0.2077 (0.2136)  class_acc: 1.0000 (0.9910)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [14]  [ 700/4500]  eta: 0:04:07  lr: 0.000271  loss: 0.2059 (0.2134)  class_acc: 1.0000 (0.9913)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [14]  [ 800/4500]  eta: 0:03:59  lr: 0.000269  loss: 0.2055 (0.2137)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [14]  [ 900/4500]  eta: 0:03:52  lr: 0.000267  loss: 0.2151 (0.2139)  class_acc: 0.9688 (0.9911)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [14]  [1000/4500]  eta: 0:03:45  lr: 0.000265  loss: 0.2066 (0.2139)  class_acc: 1.0000 (0.9911)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0649
+Epoch: [14]  [1100/4500]  eta: 0:03:37  lr: 0.000263  loss: 0.2090 (0.2140)  class_acc: 1.0000 (0.9910)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0547
+Epoch: [14]  [1200/4500]  eta: 0:03:27  lr: 0.000261  loss: 0.2005 (0.2137)  class_acc: 1.0000 (0.9913)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0536
+Epoch: [14]  [1300/4500]  eta: 0:03:20  lr: 0.000259  loss: 0.2011 (0.2140)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [14]  [1400/4500]  eta: 0:03:13  lr: 0.000258  loss: 0.2021 (0.2139)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0572
+Epoch: [14]  [1500/4500]  eta: 0:03:06  lr: 0.000256  loss: 0.2036 (0.2139)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [14]  [1600/4500]  eta: 0:03:00  lr: 0.000254  loss: 0.2023 (0.2140)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0657
+Epoch: [14]  [1700/4500]  eta: 0:02:54  lr: 0.000252  loss: 0.2004 (0.2138)  class_acc: 1.0000 (0.9913)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [14]  [1800/4500]  eta: 0:02:48  lr: 0.000250  loss: 0.1996 (0.2139)  class_acc: 1.0000 (0.9912)  min_lr: 0.0003 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [14]  [1900/4500]  eta: 0:02:42  lr: 0.000248  loss: 0.1998 (0.2136)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [14]  [2000/4500]  eta: 0:02:36  lr: 0.000246  loss: 0.2036 (0.2136)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [14]  [2100/4500]  eta: 0:02:29  lr: 0.000245  loss: 0.2009 (0.2137)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [14]  [2200/4500]  eta: 0:02:23  lr: 0.000243  loss: 0.2047 (0.2140)  class_acc: 1.0000 (0.9910)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [14]  [2300/4500]  eta: 0:02:17  lr: 0.000241  loss: 0.2013 (0.2142)  class_acc: 1.0000 (0.9908)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0578
+Epoch: [14]  [2400/4500]  eta: 0:02:10  lr: 0.000239  loss: 0.2005 (0.2142)  class_acc: 1.0000 (0.9908)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [14]  [2500/4500]  eta: 0:02:04  lr: 0.000237  loss: 0.2059 (0.2143)  class_acc: 1.0000 (0.9907)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [14]  [2600/4500]  eta: 0:01:58  lr: 0.000236  loss: 0.2058 (0.2143)  class_acc: 1.0000 (0.9907)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [14]  [2700/4500]  eta: 0:01:51  lr: 0.000234  loss: 0.2007 (0.2142)  class_acc: 1.0000 (0.9907)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [14]  [2800/4500]  eta: 0:01:45  lr: 0.000232  loss: 0.2052 (0.2142)  class_acc: 1.0000 (0.9908)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [14]  [2900/4500]  eta: 0:01:39  lr: 0.000230  loss: 0.2036 (0.2143)  class_acc: 1.0000 (0.9907)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [14]  [3000/4500]  eta: 0:01:33  lr: 0.000228  loss: 0.2013 (0.2141)  class_acc: 1.0000 (0.9908)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0539
+Epoch: [14]  [3100/4500]  eta: 0:01:26  lr: 0.000227  loss: 0.2088 (0.2140)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0534
+Epoch: [14]  [3200/4500]  eta: 0:01:20  lr: 0.000225  loss: 0.2037 (0.2141)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0575
+Epoch: [14]  [3300/4500]  eta: 0:01:14  lr: 0.000223  loss: 0.2003 (0.2139)  class_acc: 1.0000 (0.9910)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [14]  [3400/4500]  eta: 0:01:07  lr: 0.000221  loss: 0.2033 (0.2138)  class_acc: 1.0000 (0.9911)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [14]  [3500/4500]  eta: 0:01:01  lr: 0.000220  loss: 0.2028 (0.2138)  class_acc: 1.0000 (0.9911)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [14]  [3600/4500]  eta: 0:00:55  lr: 0.000218  loss: 0.2000 (0.2138)  class_acc: 1.0000 (0.9911)  min_lr: 0.0002 (0.0003)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [14]  [3700/4500]  eta: 0:00:49  lr: 0.000216  loss: 0.2122 (0.2138)  class_acc: 0.9688 (0.9910)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0540
+Epoch: [14]  [3800/4500]  eta: 0:00:43  lr: 0.000214  loss: 0.2033 (0.2138)  class_acc: 1.0000 (0.9910)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [14]  [3900/4500]  eta: 0:00:37  lr: 0.000213  loss: 0.2001 (0.2139)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [14]  [4000/4500]  eta: 0:00:31  lr: 0.000211  loss: 0.2009 (0.2139)  class_acc: 1.0000 (0.9910)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [14]  [4100/4500]  eta: 0:00:24  lr: 0.000209  loss: 0.2066 (0.2140)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [14]  [4200/4500]  eta: 0:00:18  lr: 0.000208  loss: 0.1998 (0.2140)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0676
+Epoch: [14]  [4300/4500]  eta: 0:00:12  lr: 0.000206  loss: 0.2033 (0.2139)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [14]  [4400/4500]  eta: 0:00:06  lr: 0.000204  loss: 0.2032 (0.2139)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [14]  [4499/4500]  eta: 0:00:00  lr: 0.000203  loss: 0.2031 (0.2139)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [14] Total time: 0:04:40 (0.0623 s / it)
+Averaged stats: lr: 0.000203  loss: 0.2031 (0.2139)  class_acc: 1.0000 (0.9909)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:18  loss: 0.0504 (0.0504)  acc1: 1.0000 (1.0000)  time: 1.5657
+Test:  [49/50]  eta: 0:00:00  loss: 0.0481 (0.0491)  acc1: 1.0000 (1.0000)  time: 0.0175
+Test: Total time: 0:00:02 (0.0518 s / it)
+* Acc@1 100.00% loss 0.0491
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [15]  [   0/4500]  eta: 2:18:36  lr: 0.000203  loss: 0.1987 (0.1987)  class_acc: 1.0000 (1.0000)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 1.8480
+Epoch: [15]  [ 100/4500]  eta: 0:05:58  lr: 0.000201  loss: 0.2018 (0.2106)  class_acc: 1.0000 (0.9923)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [15]  [ 200/4500]  eta: 0:05:09  lr: 0.000199  loss: 0.2011 (0.2111)  class_acc: 1.0000 (0.9911)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [15]  [ 300/4500]  eta: 0:04:47  lr: 0.000197  loss: 0.2066 (0.2122)  class_acc: 1.0000 (0.9914)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [15]  [ 400/4500]  eta: 0:04:37  lr: 0.000196  loss: 0.2000 (0.2127)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [15]  [ 500/4500]  eta: 0:04:26  lr: 0.000194  loss: 0.2006 (0.2130)  class_acc: 1.0000 (0.9912)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [15]  [ 600/4500]  eta: 0:04:19  lr: 0.000193  loss: 0.2047 (0.2127)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [15]  [ 700/4500]  eta: 0:04:10  lr: 0.000191  loss: 0.2013 (0.2126)  class_acc: 1.0000 (0.9914)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [15]  [ 800/4500]  eta: 0:04:04  lr: 0.000189  loss: 0.2100 (0.2129)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0668
+Epoch: [15]  [ 900/4500]  eta: 0:03:56  lr: 0.000188  loss: 0.1995 (0.2127)  class_acc: 1.0000 (0.9915)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [15]  [1000/4500]  eta: 0:03:48  lr: 0.000186  loss: 0.2023 (0.2129)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [15]  [1100/4500]  eta: 0:03:42  lr: 0.000184  loss: 0.2017 (0.2129)  class_acc: 1.0000 (0.9913)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0676
+Epoch: [15]  [1200/4500]  eta: 0:03:35  lr: 0.000183  loss: 0.1996 (0.2128)  class_acc: 1.0000 (0.9914)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [15]  [1300/4500]  eta: 0:03:28  lr: 0.000181  loss: 0.2010 (0.2128)  class_acc: 1.0000 (0.9915)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [15]  [1400/4500]  eta: 0:03:22  lr: 0.000179  loss: 0.2003 (0.2126)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0659
+Epoch: [15]  [1500/4500]  eta: 0:03:15  lr: 0.000178  loss: 0.2002 (0.2123)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [15]  [1600/4500]  eta: 0:03:08  lr: 0.000176  loss: 0.2038 (0.2124)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [15]  [1700/4500]  eta: 0:03:02  lr: 0.000175  loss: 0.2015 (0.2124)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [15]  [1800/4500]  eta: 0:02:55  lr: 0.000173  loss: 0.2054 (0.2124)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [15]  [1900/4500]  eta: 0:02:48  lr: 0.000172  loss: 0.2007 (0.2125)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0666
+Epoch: [15]  [2000/4500]  eta: 0:02:42  lr: 0.000170  loss: 0.2037 (0.2125)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [15]  [2100/4500]  eta: 0:02:35  lr: 0.000168  loss: 0.2091 (0.2126)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [15]  [2200/4500]  eta: 0:02:28  lr: 0.000167  loss: 0.1999 (0.2126)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [15]  [2300/4500]  eta: 0:02:21  lr: 0.000165  loss: 0.2000 (0.2125)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0641
+Epoch: [15]  [2400/4500]  eta: 0:02:15  lr: 0.000164  loss: 0.2009 (0.2125)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [15]  [2500/4500]  eta: 0:02:08  lr: 0.000162  loss: 0.1995 (0.2123)  class_acc: 1.0000 (0.9916)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0592
+Epoch: [15]  [2600/4500]  eta: 0:02:02  lr: 0.000161  loss: 0.2005 (0.2123)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [15]  [2700/4500]  eta: 0:01:55  lr: 0.000159  loss: 0.2017 (0.2123)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [15]  [2800/4500]  eta: 0:01:49  lr: 0.000158  loss: 0.2025 (0.2123)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [15]  [2900/4500]  eta: 0:01:42  lr: 0.000156  loss: 0.2013 (0.2123)  class_acc: 1.0000 (0.9917)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [15]  [3000/4500]  eta: 0:01:36  lr: 0.000155  loss: 0.1994 (0.2122)  class_acc: 1.0000 (0.9918)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0595
+Epoch: [15]  [3100/4500]  eta: 0:01:29  lr: 0.000153  loss: 0.2011 (0.2123)  class_acc: 1.0000 (0.9918)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [15]  [3200/4500]  eta: 0:01:23  lr: 0.000152  loss: 0.2065 (0.2122)  class_acc: 1.0000 (0.9918)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [15]  [3300/4500]  eta: 0:01:16  lr: 0.000150  loss: 0.2039 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0002 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [15]  [3400/4500]  eta: 0:01:10  lr: 0.000149  loss: 0.2028 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0687
+Epoch: [15]  [3500/4500]  eta: 0:01:03  lr: 0.000147  loss: 0.2020 (0.2122)  class_acc: 1.0000 (0.9918)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [15]  [3600/4500]  eta: 0:00:57  lr: 0.000146  loss: 0.2030 (0.2123)  class_acc: 1.0000 (0.9918)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [15]  [3700/4500]  eta: 0:00:51  lr: 0.000144  loss: 0.2002 (0.2122)  class_acc: 1.0000 (0.9918)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0655
+Epoch: [15]  [3800/4500]  eta: 0:00:44  lr: 0.000143  loss: 0.2022 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [15]  [3900/4500]  eta: 0:00:38  lr: 0.000141  loss: 0.1995 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0586
+Epoch: [15]  [4000/4500]  eta: 0:00:31  lr: 0.000140  loss: 0.2005 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [15]  [4100/4500]  eta: 0:00:25  lr: 0.000138  loss: 0.2030 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [15]  [4200/4500]  eta: 0:00:19  lr: 0.000137  loss: 0.2028 (0.2122)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [15]  [4300/4500]  eta: 0:00:12  lr: 0.000136  loss: 0.2021 (0.2121)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [15]  [4400/4500]  eta: 0:00:06  lr: 0.000134  loss: 0.2011 (0.2121)  class_acc: 1.0000 (0.9919)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [15]  [4499/4500]  eta: 0:00:00  lr: 0.000133  loss: 0.2015 (0.2120)  class_acc: 1.0000 (0.9920)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [15] Total time: 0:04:46 (0.0637 s / it)
+Averaged stats: lr: 0.000133  loss: 0.2015 (0.2120)  class_acc: 1.0000 (0.9920)  min_lr: 0.0001 (0.0002)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:58  loss: 0.0513 (0.0513)  acc1: 1.0000 (1.0000)  time: 1.1749
+Test:  [49/50]  eta: 0:00:00  loss: 0.0488 (0.0503)  acc1: 1.0000 (1.0000)  time: 0.0175
+Test: Total time: 0:00:02 (0.0531 s / it)
+* Acc@1 100.00% loss 0.0503
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [16]  [   0/4500]  eta: 2:36:28  lr: 0.000133  loss: 0.1989 (0.1989)  class_acc: 1.0000 (1.0000)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 2.0864
+Epoch: [16]  [ 100/4500]  eta: 0:06:03  lr: 0.000131  loss: 0.2012 (0.2143)  class_acc: 1.0000 (0.9910)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [16]  [ 200/4500]  eta: 0:05:13  lr: 0.000130  loss: 0.2233 (0.2143)  class_acc: 0.9688 (0.9900)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [16]  [ 300/4500]  eta: 0:04:54  lr: 0.000128  loss: 0.2014 (0.2127)  class_acc: 1.0000 (0.9912)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [16]  [ 400/4500]  eta: 0:04:40  lr: 0.000127  loss: 0.2002 (0.2118)  class_acc: 1.0000 (0.9918)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0639
+Epoch: [16]  [ 500/4500]  eta: 0:04:28  lr: 0.000126  loss: 0.1999 (0.2108)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [16]  [ 600/4500]  eta: 0:04:18  lr: 0.000124  loss: 0.2010 (0.2110)  class_acc: 1.0000 (0.9923)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [16]  [ 700/4500]  eta: 0:04:08  lr: 0.000123  loss: 0.1998 (0.2111)  class_acc: 1.0000 (0.9923)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [16]  [ 800/4500]  eta: 0:03:59  lr: 0.000122  loss: 0.2016 (0.2111)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [16]  [ 900/4500]  eta: 0:03:52  lr: 0.000120  loss: 0.2027 (0.2110)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [16]  [1000/4500]  eta: 0:03:45  lr: 0.000119  loss: 0.2003 (0.2116)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [16]  [1100/4500]  eta: 0:03:39  lr: 0.000118  loss: 0.2009 (0.2118)  class_acc: 1.0000 (0.9922)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [16]  [1200/4500]  eta: 0:03:30  lr: 0.000116  loss: 0.2000 (0.2116)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0556
+Epoch: [16]  [1300/4500]  eta: 0:03:24  lr: 0.000115  loss: 0.2055 (0.2116)  class_acc: 1.0000 (0.9922)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [16]  [1400/4500]  eta: 0:03:17  lr: 0.000114  loss: 0.1999 (0.2117)  class_acc: 1.0000 (0.9921)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [16]  [1500/4500]  eta: 0:03:10  lr: 0.000112  loss: 0.1993 (0.2118)  class_acc: 1.0000 (0.9920)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0584
+Epoch: [16]  [1600/4500]  eta: 0:03:04  lr: 0.000111  loss: 0.2010 (0.2117)  class_acc: 1.0000 (0.9921)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0563
+Epoch: [16]  [1700/4500]  eta: 0:02:57  lr: 0.000110  loss: 0.2037 (0.2117)  class_acc: 1.0000 (0.9921)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0620
+Epoch: [16]  [1800/4500]  eta: 0:02:50  lr: 0.000108  loss: 0.2006 (0.2116)  class_acc: 1.0000 (0.9921)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [16]  [1900/4500]  eta: 0:02:44  lr: 0.000107  loss: 0.2004 (0.2115)  class_acc: 1.0000 (0.9922)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [16]  [2000/4500]  eta: 0:02:38  lr: 0.000106  loss: 0.2010 (0.2114)  class_acc: 1.0000 (0.9923)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [16]  [2100/4500]  eta: 0:02:31  lr: 0.000105  loss: 0.1999 (0.2114)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [16]  [2200/4500]  eta: 0:02:24  lr: 0.000103  loss: 0.2015 (0.2113)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0587
+Epoch: [16]  [2300/4500]  eta: 0:02:18  lr: 0.000102  loss: 0.1996 (0.2114)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [16]  [2400/4500]  eta: 0:02:12  lr: 0.000101  loss: 0.2025 (0.2114)  class_acc: 1.0000 (0.9923)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0561
+Epoch: [16]  [2500/4500]  eta: 0:02:05  lr: 0.000100  loss: 0.2004 (0.2113)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [16]  [2600/4500]  eta: 0:01:59  lr: 0.000098  loss: 0.2004 (0.2112)  class_acc: 1.0000 (0.9924)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [16]  [2700/4500]  eta: 0:01:53  lr: 0.000097  loss: 0.2001 (0.2111)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [16]  [2800/4500]  eta: 0:01:46  lr: 0.000096  loss: 0.2028 (0.2110)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [16]  [2900/4500]  eta: 0:01:40  lr: 0.000095  loss: 0.2003 (0.2110)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [16]  [3000/4500]  eta: 0:01:33  lr: 0.000093  loss: 0.2023 (0.2109)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0545
+Epoch: [16]  [3100/4500]  eta: 0:01:27  lr: 0.000092  loss: 0.2001 (0.2109)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [16]  [3200/4500]  eta: 0:01:21  lr: 0.000091  loss: 0.2003 (0.2109)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [16]  [3300/4500]  eta: 0:01:14  lr: 0.000090  loss: 0.1990 (0.2110)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [16]  [3400/4500]  eta: 0:01:08  lr: 0.000089  loss: 0.2034 (0.2110)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [16]  [3500/4500]  eta: 0:01:02  lr: 0.000088  loss: 0.1998 (0.2110)  class_acc: 1.0000 (0.9925)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [16]  [3600/4500]  eta: 0:00:56  lr: 0.000086  loss: 0.2000 (0.2109)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [16]  [3700/4500]  eta: 0:00:49  lr: 0.000085  loss: 0.2031 (0.2109)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [16]  [3800/4500]  eta: 0:00:43  lr: 0.000084  loss: 0.2045 (0.2108)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0557
+Epoch: [16]  [3900/4500]  eta: 0:00:37  lr: 0.000083  loss: 0.2001 (0.2108)  class_acc: 1.0000 (0.9926)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [16]  [4000/4500]  eta: 0:00:31  lr: 0.000082  loss: 0.1995 (0.2107)  class_acc: 1.0000 (0.9927)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0591
+Epoch: [16]  [4100/4500]  eta: 0:00:24  lr: 0.000081  loss: 0.2016 (0.2107)  class_acc: 1.0000 (0.9927)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [16]  [4200/4500]  eta: 0:00:18  lr: 0.000080  loss: 0.2004 (0.2107)  class_acc: 1.0000 (0.9927)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0638
+Epoch: [16]  [4300/4500]  eta: 0:00:12  lr: 0.000078  loss: 0.1999 (0.2106)  class_acc: 1.0000 (0.9928)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0589
+Epoch: [16]  [4400/4500]  eta: 0:00:06  lr: 0.000077  loss: 0.2057 (0.2105)  class_acc: 1.0000 (0.9928)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0573
+Epoch: [16]  [4499/4500]  eta: 0:00:00  lr: 0.000076  loss: 0.2018 (0.2105)  class_acc: 1.0000 (0.9928)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0571
+Epoch: [16] Total time: 0:04:38 (0.0618 s / it)
+Averaged stats: lr: 0.000076  loss: 0.2018 (0.2105)  class_acc: 1.0000 (0.9928)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:53  loss: 0.0487 (0.0487)  acc1: 1.0000 (1.0000)  time: 1.0769
+Test:  [49/50]  eta: 0:00:00  loss: 0.0465 (0.0480)  acc1: 1.0000 (1.0000)  time: 0.0172
+Test: Total time: 0:00:02 (0.0514 s / it)
+* Acc@1 100.00% loss 0.0480
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [17]  [   0/4500]  eta: 2:13:02  lr: 0.000076  loss: 0.1992 (0.1992)  class_acc: 1.0000 (1.0000)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 1.7739
+Epoch: [17]  [ 100/4500]  eta: 0:05:48  lr: 0.000075  loss: 0.2001 (0.2082)  class_acc: 1.0000 (0.9947)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [17]  [ 200/4500]  eta: 0:05:04  lr: 0.000074  loss: 0.1999 (0.2079)  class_acc: 1.0000 (0.9947)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0604
+Epoch: [17]  [ 300/4500]  eta: 0:04:46  lr: 0.000073  loss: 0.1995 (0.2088)  class_acc: 1.0000 (0.9945)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [17]  [ 400/4500]  eta: 0:04:32  lr: 0.000072  loss: 0.1998 (0.2084)  class_acc: 1.0000 (0.9945)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0637
+Epoch: [17]  [ 500/4500]  eta: 0:04:22  lr: 0.000071  loss: 0.1990 (0.2083)  class_acc: 1.0000 (0.9944)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [17]  [ 600/4500]  eta: 0:04:12  lr: 0.000070  loss: 0.1993 (0.2082)  class_acc: 1.0000 (0.9943)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [17]  [ 700/4500]  eta: 0:04:04  lr: 0.000069  loss: 0.2011 (0.2086)  class_acc: 1.0000 (0.9939)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [17]  [ 800/4500]  eta: 0:03:57  lr: 0.000068  loss: 0.2028 (0.2086)  class_acc: 1.0000 (0.9940)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0633
+Epoch: [17]  [ 900/4500]  eta: 0:03:49  lr: 0.000067  loss: 0.2022 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [17]  [1000/4500]  eta: 0:03:42  lr: 0.000066  loss: 0.2005 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [17]  [1100/4500]  eta: 0:03:35  lr: 0.000065  loss: 0.2034 (0.2093)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [17]  [1200/4500]  eta: 0:03:28  lr: 0.000064  loss: 0.1993 (0.2095)  class_acc: 1.0000 (0.9933)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [17]  [1300/4500]  eta: 0:03:22  lr: 0.000063  loss: 0.1991 (0.2094)  class_acc: 1.0000 (0.9935)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [17]  [1400/4500]  eta: 0:03:15  lr: 0.000062  loss: 0.2000 (0.2096)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0598
+Epoch: [17]  [1500/4500]  eta: 0:03:08  lr: 0.000061  loss: 0.1998 (0.2093)  class_acc: 1.0000 (0.9937)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [17]  [1600/4500]  eta: 0:03:01  lr: 0.000060  loss: 0.2004 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0610
+Epoch: [17]  [1700/4500]  eta: 0:02:55  lr: 0.000059  loss: 0.2012 (0.2093)  class_acc: 1.0000 (0.9937)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [17]  [1800/4500]  eta: 0:02:49  lr: 0.000058  loss: 0.2013 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [17]  [1900/4500]  eta: 0:02:42  lr: 0.000057  loss: 0.2019 (0.2093)  class_acc: 1.0000 (0.9937)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0652
+Epoch: [17]  [2000/4500]  eta: 0:02:36  lr: 0.000056  loss: 0.1990 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [17]  [2100/4500]  eta: 0:02:29  lr: 0.000055  loss: 0.2013 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0598
+Epoch: [17]  [2200/4500]  eta: 0:02:23  lr: 0.000054  loss: 0.2006 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0567
+Epoch: [17]  [2300/4500]  eta: 0:02:16  lr: 0.000053  loss: 0.2005 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0630
+Epoch: [17]  [2400/4500]  eta: 0:02:10  lr: 0.000052  loss: 0.2001 (0.2095)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [17]  [2500/4500]  eta: 0:02:04  lr: 0.000051  loss: 0.1989 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [17]  [2600/4500]  eta: 0:01:57  lr: 0.000050  loss: 0.1998 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0001 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0585
+Epoch: [17]  [2700/4500]  eta: 0:01:51  lr: 0.000050  loss: 0.2008 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [17]  [2800/4500]  eta: 0:01:45  lr: 0.000049  loss: 0.1997 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [17]  [2900/4500]  eta: 0:01:39  lr: 0.000048  loss: 0.2013 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [17]  [3000/4500]  eta: 0:01:33  lr: 0.000047  loss: 0.2029 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0613
+Epoch: [17]  [3100/4500]  eta: 0:01:26  lr: 0.000046  loss: 0.2007 (0.2094)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0621
+Epoch: [17]  [3200/4500]  eta: 0:01:20  lr: 0.000045  loss: 0.2012 (0.2093)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [17]  [3300/4500]  eta: 0:01:14  lr: 0.000044  loss: 0.1997 (0.2093)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0721
+Epoch: [17]  [3400/4500]  eta: 0:01:08  lr: 0.000044  loss: 0.2012 (0.2092)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0576
+Epoch: [17]  [3500/4500]  eta: 0:01:02  lr: 0.000043  loss: 0.1997 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [17]  [3600/4500]  eta: 0:00:55  lr: 0.000042  loss: 0.2019 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [17]  [3700/4500]  eta: 0:00:49  lr: 0.000041  loss: 0.1993 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [17]  [3800/4500]  eta: 0:00:43  lr: 0.000040  loss: 0.1998 (0.2092)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0606
+Epoch: [17]  [3900/4500]  eta: 0:00:37  lr: 0.000039  loss: 0.2012 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0570
+Epoch: [17]  [4000/4500]  eta: 0:00:30  lr: 0.000039  loss: 0.1996 (0.2092)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0532
+Epoch: [17]  [4100/4500]  eta: 0:00:24  lr: 0.000038  loss: 0.2033 (0.2092)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [17]  [4200/4500]  eta: 0:00:18  lr: 0.000037  loss: 0.1990 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0654
+Epoch: [17]  [4300/4500]  eta: 0:00:12  lr: 0.000036  loss: 0.2014 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0617
+Epoch: [17]  [4400/4500]  eta: 0:00:06  lr: 0.000036  loss: 0.2015 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [17]  [4499/4500]  eta: 0:00:00  lr: 0.000035  loss: 0.2000 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)  time: 0.0583
+Epoch: [17] Total time: 0:04:37 (0.0617 s / it)
+Averaged stats: lr: 0.000035  loss: 0.2000 (0.2091)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0001)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:00:55  loss: 0.0517 (0.0517)  acc1: 1.0000 (1.0000)  time: 1.1076
+Test:  [49/50]  eta: 0:00:00  loss: 0.0466 (0.0495)  acc1: 1.0000 (1.0000)  time: 0.0171
+Test: Total time: 0:00:02 (0.0522 s / it)
+* Acc@1 100.00% loss 0.0495
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [18]  [   0/4500]  eta: 1:52:51  lr: 0.000035  loss: 0.2242 (0.2242)  class_acc: 0.9688 (0.9688)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 1.5048
+Epoch: [18]  [ 100/4500]  eta: 0:05:53  lr: 0.000034  loss: 0.2011 (0.2092)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0635
+Epoch: [18]  [ 200/4500]  eta: 0:05:05  lr: 0.000033  loss: 0.2003 (0.2095)  class_acc: 1.0000 (0.9942)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [18]  [ 300/4500]  eta: 0:04:42  lr: 0.000033  loss: 0.2000 (0.2103)  class_acc: 1.0000 (0.9933)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0607
+Epoch: [18]  [ 400/4500]  eta: 0:04:27  lr: 0.000032  loss: 0.2001 (0.2101)  class_acc: 1.0000 (0.9935)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0575
+Epoch: [18]  [ 500/4500]  eta: 0:04:16  lr: 0.000031  loss: 0.2001 (0.2096)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0609
+Epoch: [18]  [ 600/4500]  eta: 0:04:13  lr: 0.000031  loss: 0.2012 (0.2094)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0719
+Epoch: [18]  [ 700/4500]  eta: 0:04:08  lr: 0.000030  loss: 0.2007 (0.2093)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [18]  [ 800/4500]  eta: 0:04:00  lr: 0.000029  loss: 0.2000 (0.2090)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0640
+Epoch: [18]  [ 900/4500]  eta: 0:03:53  lr: 0.000028  loss: 0.2009 (0.2089)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [18]  [1000/4500]  eta: 0:03:46  lr: 0.000028  loss: 0.1992 (0.2088)  class_acc: 1.0000 (0.9940)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [18]  [1100/4500]  eta: 0:03:38  lr: 0.000027  loss: 0.2000 (0.2089)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0560
+Epoch: [18]  [1200/4500]  eta: 0:03:32  lr: 0.000026  loss: 0.2014 (0.2088)  class_acc: 1.0000 (0.9940)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0675
+Epoch: [18]  [1300/4500]  eta: 0:03:25  lr: 0.000026  loss: 0.2001 (0.2089)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [18]  [1400/4500]  eta: 0:03:19  lr: 0.000025  loss: 0.1994 (0.2089)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0670
+Epoch: [18]  [1500/4500]  eta: 0:03:13  lr: 0.000025  loss: 0.1991 (0.2089)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [18]  [1600/4500]  eta: 0:03:07  lr: 0.000024  loss: 0.1995 (0.2088)  class_acc: 1.0000 (0.9939)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0663
+Epoch: [18]  [1700/4500]  eta: 0:03:00  lr: 0.000023  loss: 0.1999 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0615
+Epoch: [18]  [1800/4500]  eta: 0:02:54  lr: 0.000023  loss: 0.1996 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0619
+Epoch: [18]  [1900/4500]  eta: 0:02:47  lr: 0.000022  loss: 0.1999 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0656
+Epoch: [18]  [2000/4500]  eta: 0:02:40  lr: 0.000022  loss: 0.2001 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [18]  [2100/4500]  eta: 0:02:33  lr: 0.000021  loss: 0.1994 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0572
+Epoch: [18]  [2200/4500]  eta: 0:02:27  lr: 0.000020  loss: 0.1996 (0.2090)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0608
+Epoch: [18]  [2300/4500]  eta: 0:02:20  lr: 0.000020  loss: 0.2019 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [18]  [2400/4500]  eta: 0:02:13  lr: 0.000019  loss: 0.2088 (0.2092)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0553
+Epoch: [18]  [2500/4500]  eta: 0:02:06  lr: 0.000019  loss: 0.1997 (0.2091)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0578
+Epoch: [18]  [2600/4500]  eta: 0:01:59  lr: 0.000018  loss: 0.1989 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [18]  [2700/4500]  eta: 0:01:53  lr: 0.000018  loss: 0.1996 (0.2090)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [18]  [2800/4500]  eta: 0:01:46  lr: 0.000017  loss: 0.2033 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0605
+Epoch: [18]  [2900/4500]  eta: 0:01:40  lr: 0.000017  loss: 0.2000 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0624
+Epoch: [18]  [3000/4500]  eta: 0:01:33  lr: 0.000016  loss: 0.2002 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0531
+Epoch: [18]  [3100/4500]  eta: 0:01:27  lr: 0.000016  loss: 0.2012 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [18]  [3200/4500]  eta: 0:01:20  lr: 0.000015  loss: 0.1999 (0.2089)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0566
+Epoch: [18]  [3300/4500]  eta: 0:01:14  lr: 0.000015  loss: 0.2058 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0645
+Epoch: [18]  [3400/4500]  eta: 0:01:08  lr: 0.000014  loss: 0.1991 (0.2091)  class_acc: 1.0000 (0.9936)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0594
+Epoch: [18]  [3500/4500]  eta: 0:01:02  lr: 0.000014  loss: 0.2000 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [18]  [3600/4500]  eta: 0:00:55  lr: 0.000013  loss: 0.2004 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0650
+Epoch: [18]  [3700/4500]  eta: 0:00:49  lr: 0.000013  loss: 0.2012 (0.2091)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0646
+Epoch: [18]  [3800/4500]  eta: 0:00:43  lr: 0.000012  loss: 0.1995 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0623
+Epoch: [18]  [3900/4500]  eta: 0:00:37  lr: 0.000012  loss: 0.1997 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [18]  [4000/4500]  eta: 0:00:31  lr: 0.000012  loss: 0.2012 (0.2090)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [18]  [4100/4500]  eta: 0:00:24  lr: 0.000011  loss: 0.2000 (0.2089)  class_acc: 1.0000 (0.9937)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [18]  [4200/4500]  eta: 0:00:18  lr: 0.000011  loss: 0.1992 (0.2089)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [18]  [4300/4500]  eta: 0:00:12  lr: 0.000010  loss: 0.2021 (0.2088)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0568
+Epoch: [18]  [4400/4500]  eta: 0:00:06  lr: 0.000010  loss: 0.1991 (0.2088)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0596
+Epoch: [18]  [4499/4500]  eta: 0:00:00  lr: 0.000010  loss: 0.1994 (0.2088)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0559
+Epoch: [18] Total time: 0:04:38 (0.0618 s / it)
+Averaged stats: lr: 0.000010  loss: 0.1994 (0.2088)  class_acc: 1.0000 (0.9938)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:14  loss: 0.0528 (0.0528)  acc1: 1.0000 (1.0000)  time: 1.4934
+Test:  [49/50]  eta: 0:00:00  loss: 0.0460 (0.0494)  acc1: 1.0000 (1.0000)  time: 0.0176
+Test: Total time: 0:00:02 (0.0540 s / it)
+* Acc@1 100.00% loss 0.0494
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Epoch: [19]  [   0/4500]  eta: 2:43:11  lr: 0.000010  loss: 0.1993 (0.1993)  class_acc: 1.0000 (1.0000)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 2.1759
+Epoch: [19]  [ 100/4500]  eta: 0:06:08  lr: 0.000009  loss: 0.1997 (0.2079)  class_acc: 1.0000 (0.9954)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0643
+Epoch: [19]  [ 200/4500]  eta: 0:05:17  lr: 0.000009  loss: 0.1995 (0.2077)  class_acc: 1.0000 (0.9952)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [19]  [ 300/4500]  eta: 0:04:52  lr: 0.000008  loss: 0.1991 (0.2071)  class_acc: 1.0000 (0.9958)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0579
+Epoch: [19]  [ 400/4500]  eta: 0:04:37  lr: 0.000008  loss: 0.2001 (0.2071)  class_acc: 1.0000 (0.9955)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [19]  [ 500/4500]  eta: 0:04:25  lr: 0.000008  loss: 0.1991 (0.2073)  class_acc: 1.0000 (0.9952)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [19]  [ 600/4500]  eta: 0:04:15  lr: 0.000007  loss: 0.2003 (0.2072)  class_acc: 1.0000 (0.9951)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0599
+Epoch: [19]  [ 700/4500]  eta: 0:04:06  lr: 0.000007  loss: 0.1990 (0.2069)  class_acc: 1.0000 (0.9951)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [19]  [ 800/4500]  eta: 0:03:58  lr: 0.000007  loss: 0.1994 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0644
+Epoch: [19]  [ 900/4500]  eta: 0:03:51  lr: 0.000006  loss: 0.1990 (0.2070)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0653
+Epoch: [19]  [1000/4500]  eta: 0:03:43  lr: 0.000006  loss: 0.2004 (0.2068)  class_acc: 1.0000 (0.9953)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [19]  [1100/4500]  eta: 0:03:34  lr: 0.000006  loss: 0.2004 (0.2070)  class_acc: 1.0000 (0.9951)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0560
+Epoch: [19]  [1200/4500]  eta: 0:03:28  lr: 0.000006  loss: 0.1995 (0.2069)  class_acc: 1.0000 (0.9951)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0628
+Epoch: [19]  [1300/4500]  eta: 0:03:20  lr: 0.000005  loss: 0.2031 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [19]  [1400/4500]  eta: 0:03:14  lr: 0.000005  loss: 0.1997 (0.2074)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [19]  [1500/4500]  eta: 0:03:07  lr: 0.000005  loss: 0.2002 (0.2072)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0625
+Epoch: [19]  [1600/4500]  eta: 0:03:00  lr: 0.000005  loss: 0.1988 (0.2072)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [19]  [1700/4500]  eta: 0:02:54  lr: 0.000004  loss: 0.1990 (0.2072)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [19]  [1800/4500]  eta: 0:02:48  lr: 0.000004  loss: 0.2019 (0.2072)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0588
+Epoch: [19]  [1900/4500]  eta: 0:02:41  lr: 0.000004  loss: 0.1992 (0.2072)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [19]  [2000/4500]  eta: 0:02:35  lr: 0.000004  loss: 0.1995 (0.2072)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [19]  [2100/4500]  eta: 0:02:28  lr: 0.000003  loss: 0.1987 (0.2071)  class_acc: 1.0000 (0.9950)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [19]  [2200/4500]  eta: 0:02:22  lr: 0.000003  loss: 0.2013 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0622
+Epoch: [19]  [2300/4500]  eta: 0:02:16  lr: 0.000003  loss: 0.1989 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0651
+Epoch: [19]  [2400/4500]  eta: 0:02:09  lr: 0.000003  loss: 0.1999 (0.2074)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0611
+Epoch: [19]  [2500/4500]  eta: 0:02:03  lr: 0.000003  loss: 0.1993 (0.2074)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0636
+Epoch: [19]  [2600/4500]  eta: 0:01:57  lr: 0.000003  loss: 0.1989 (0.2074)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0616
+Epoch: [19]  [2700/4500]  eta: 0:01:51  lr: 0.000002  loss: 0.1999 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0602
+Epoch: [19]  [2800/4500]  eta: 0:01:44  lr: 0.000002  loss: 0.1998 (0.2074)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0572
+Epoch: [19]  [2900/4500]  eta: 0:01:38  lr: 0.000002  loss: 0.2003 (0.2075)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [19]  [3000/4500]  eta: 0:01:32  lr: 0.000002  loss: 0.1991 (0.2074)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0614
+Epoch: [19]  [3100/4500]  eta: 0:01:26  lr: 0.000002  loss: 0.1992 (0.2075)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0632
+Epoch: [19]  [3200/4500]  eta: 0:01:20  lr: 0.000002  loss: 0.1997 (0.2075)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0629
+Epoch: [19]  [3300/4500]  eta: 0:01:13  lr: 0.000002  loss: 0.1995 (0.2074)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0612
+Epoch: [19]  [3400/4500]  eta: 0:01:07  lr: 0.000002  loss: 0.1996 (0.2073)  class_acc: 1.0000 (0.9949)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0634
+Epoch: [19]  [3500/4500]  eta: 0:01:01  lr: 0.000001  loss: 0.2004 (0.2074)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0626
+Epoch: [19]  [3600/4500]  eta: 0:00:55  lr: 0.000001  loss: 0.2001 (0.2075)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [19]  [3700/4500]  eta: 0:00:49  lr: 0.000001  loss: 0.1998 (0.2075)  class_acc: 1.0000 (0.9948)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0557
+Epoch: [19]  [3800/4500]  eta: 0:00:43  lr: 0.000001  loss: 0.1996 (0.2075)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0683
+Epoch: [19]  [3900/4500]  eta: 0:00:36  lr: 0.000001  loss: 0.1995 (0.2076)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0597
+Epoch: [19]  [4000/4500]  eta: 0:00:30  lr: 0.000001  loss: 0.1995 (0.2075)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0631
+Epoch: [19]  [4100/4500]  eta: 0:00:24  lr: 0.000001  loss: 0.1999 (0.2075)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0568
+Epoch: [19]  [4200/4500]  eta: 0:00:18  lr: 0.000001  loss: 0.1988 (0.2075)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0627
+Epoch: [19]  [4300/4500]  eta: 0:00:12  lr: 0.000001  loss: 0.1996 (0.2076)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0618
+Epoch: [19]  [4400/4500]  eta: 0:00:06  lr: 0.000001  loss: 0.2000 (0.2077)  class_acc: 1.0000 (0.9946)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0593
+Epoch: [19]  [4499/4500]  eta: 0:00:00  lr: 0.000001  loss: 0.2001 (0.2076)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)  time: 0.0601
+Epoch: [19] Total time: 0:04:36 (0.0615 s / it)
+Averaged stats: lr: 0.000001  loss: 0.2001 (0.2076)  class_acc: 1.0000 (0.9947)  min_lr: 0.0000 (0.0000)  weight_decay: 0.0100 (0.0100)
+Test:  [ 0/50]  eta: 0:01:08  loss: 0.0528 (0.0528)  acc1: 1.0000 (1.0000)  time: 1.3793
+Test:  [49/50]  eta: 0:00:00  loss: 0.0454 (0.0493)  acc1: 1.0000 (1.0000)  time: 0.0167
+Test: Total time: 0:00:02 (0.0535 s / it)
+* Acc@1 100.00% loss 0.0493
+Accuracy of the model on the 1600 test images: 100.00%
+Max accuracy: 100.00%
+Training time 1:34:38

@@ -84,6 +84,40 @@ def conv1x1(in_planes, out_planes, stride=1):
 #         return x
 
 
+class EMA(nn.Module):
+    def __init__(self, channels, factor=8, stride=1):
+        super(EMA, self).__init__()
+        self.groups = factor
+        self.stride = stride
+        assert channels // self.groups > 0
+        self.softmax = nn.Softmax(-1)
+        self.agp = nn.AdaptiveAvgPool2d((1, 1))
+        self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
+        self.pool_w = nn.AdaptiveAvgPool2d((1, None))
+        self.gn = nn.GroupNorm(channels // self.groups, channels // self.groups)
+        self.conv1x1 = nn.Conv2d(channels // self.groups, channels // self.groups, kernel_size=1, stride=1, padding=0)
+        self.conv3x3 = nn.Conv2d(channels // self.groups, channels // self.groups, kernel_size=3, stride=1, padding=1)
+
+    def forward(self, x):
+        b, c, h, w = x.size()
+        group_x = x.reshape(b * self.groups, -1, h, w)  # b*g,c//g,h,w
+        x_h = self.pool_h(group_x)
+        x_w = self.pool_w(group_x).permute(0, 1, 3, 2)
+        hw = self.conv1x1(torch.cat([x_h, x_w], dim=2))
+        x_h, x_w = torch.split(hw, [h, w], dim=2)
+        x1 = self.gn(group_x * x_h.sigmoid() * x_w.permute(0, 1, 3, 2).sigmoid())
+        x2 = self.conv3x3(group_x)
+        x11 = self.softmax(self.agp(x1).reshape(b * self.groups, -1, 1).permute(0, 2, 1))
+        x12 = x2.reshape(b * self.groups, c // self.groups, -1)  # b*g, c//g, hw
+        x21 = self.softmax(self.agp(x2).reshape(b * self.groups, -1, 1).permute(0, 2, 1))
+        x22 = x1.reshape(b * self.groups, c // self.groups, -1)  # b*g, c//g, hw
+        weights = (torch.matmul(x11, x12) + torch.matmul(x21, x22)).reshape(b * self.groups, 1, h, w)
+        out = (group_x * weights.sigmoid()).reshape(b, c, h, w)
+        if self.stride > 1:
+            out = F.avg_pool2d(out, kernel_size=self.stride, stride=self.stride)
+        return out
+
+
 class BasicBlock(nn.Module):
     # 基本残差块的通道扩展系数，表示输出通道数与输入通道数的比例
     # 对于基本块，输入和输出通道数相同，所以扩展系数为1
@@ -112,7 +146,7 @@ class BasicBlock(nn.Module):
         # 公式：f(x) = max(0, x)，即小于0的值变为0，大于0的值保持不变
         self.relu = nn.ReLU(inplace=True)  # inplace=True表示直接修改输入数据，节省内存
         # 第二个卷积层：保持通道数和特征图大小不变
-        self.conv2 = conv3x3(planes, planes)  # 3x3卷积，输入和输出通道数都是planes
+        self.conv2 = EMA(planes, stride=stride)  # 用EMA替换第二个3x3卷积，传入stride参数
         self.bn2 = nn.BatchNorm2d(planes)  # 第二个批归一化层
         # 下采样层：当特征图大小或通道数需要变化时，对捷径分支进行调整
         self.downsample = downsample  # 可能是None，或者是一个下采样模块
@@ -188,7 +222,7 @@ class Bottleneck(nn.Module):
         
         # 第二个3x3卷积，提取特征
         # 通道数保持不变，但可能改变特征图大小（当stride>1时）
-        self.conv2 = conv3x3(planes, planes, stride)  # 输入输出都是planes通道
+        self.conv2 = EMA(planes, stride=stride)  # 用EMA替换第二个3x3卷积，传入stride参数
         self.bn2 = nn.BatchNorm2d(planes)  # 第二个批归一化层
         
         # 第三个1x1卷积，用于升维（增加通道数）
@@ -226,7 +260,7 @@ class Bottleneck(nn.Module):
         out = self.bn1(out)  # 批归一化
         out = self.relu(out)  # ReLU激活
 
-        out = self.conv2(out)  # 第二个3x3卷积（特征提取）
+        out = self.conv2(out)  # 第二个卷积操作
         out = self.bn2(out)  # 批归一化
         out = self.relu(out)  # ReLU激活
 
