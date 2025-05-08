@@ -13,16 +13,18 @@ DISTRIBUTED_ARGS="
 "
 
 MODEL="SAFE"
-RESUME_PATH="./results/SAFE/20250427_114734"
+RESUME_PATH="./results/SAFE/add_EMA/texture_ghe_best"
 
 eval_datasets=(
     "/root/lanyun-tmp/datasets/AIGCDetectionBenchMark/test" \  
+    "/root/lanyun-tmp/datasets/ForenSynths/test" \
+    "/root/lanyun-tmp/datasets/GenImage/test" \
+    "/root/lanyun-tmp/datasets/Self-Synthesis/test" \
     "/root/lanyun-tmp/datasets/Chameleon/test" \
-    "/root/lanyun-tmp/datasets/TwinSynths/test" \
 )
 for eval_dataset in "${eval_datasets[@]}"
 do
-    python -m torch.distributed.launch $DISTRIBUTED_ARGS main_finetune.py \
+    torchrun $DISTRIBUTED_ARGS main_finetune.py \
         --input_size 256 \
         --transform_mode 'texture' \
         --model $MODEL \

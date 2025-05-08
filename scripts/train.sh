@@ -37,15 +37,14 @@ do
             --model $MODEL \
             --data_path "$train_dataset" \
             --eval_data_path "$eval_dataset" \
-            --save_ckpt_freq 1 \
+            --save_ckpt_freq 2 \
             --batch_size 32 \
             --blr 1e-2 \
             --weight_decay 0.01 \
             --warmup_epochs 1 \
-            --epochs 10 \
+            --epochs 20 \
             --num_workers 16 \
             --output_dir $OUTPUT_PATH \
-            --seed 3 \
         2>&1 | tee -a $OUTPUT_PATH/log_train.txt
 
     done

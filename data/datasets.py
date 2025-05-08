@@ -15,7 +15,7 @@ from torch.utils.data import Dataset  # 导入PyTorch的数据集基类
 from torchvision import transforms  # 导入torchvision的变换模块
 from torchvision.transforms import functional as F  # 导入变换的函数式接口
 from torchvision.transforms import InterpolationMode  # 导入插值模式
-from utils.crops import texture_crop, threshold_texture_crop, TextureCrop
+from utils.crops import TextureCrop
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True  # 允许加载截断的图片，防止因图片损坏报错
 
@@ -150,10 +150,10 @@ def Get_Transforms(args):
 
         'texture': {  # 基于纹理特征的裁剪
             'train': [
-                TextureCrop(stride=size, window_size=size, metric='sd', position='top', n=1, drop=False),
+                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=1, drop=False),
             ],
             'eval': [
-                TextureCrop(stride=size, window_size=size, metric='sd', position='top', n=1, drop=False),
+                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=1, drop=False),
             ],
         },
     }
