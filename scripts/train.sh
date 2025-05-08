@@ -31,14 +31,14 @@ do
         OUTPUT_PATH="results/$MODEL/$current_time"
         mkdir -p $OUTPUT_PATH
 
-        python -m torch.distributed.launch $DISTRIBUTED_ARGS main_finetune.py \
-            --input_size 256 \
+        torchrun $DISTRIBUTED_ARGS main_finetune.py \
+            --input_size 64 \
             --transform_mode 'texture' \
             --model $MODEL \
             --data_path "$train_dataset" \
             --eval_data_path "$eval_dataset" \
             --save_ckpt_freq 2 \
-            --batch_size 32 \
+            --batch_size 64 \
             --blr 1e-2 \
             --weight_decay 0.01 \
             --warmup_epochs 1 \

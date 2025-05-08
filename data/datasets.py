@@ -150,10 +150,10 @@ def Get_Transforms(args):
 
         'texture': {  # 基于纹理特征的裁剪
             'train': [
-                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=1, drop=False),
+                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=16, drop=False),
             ],
             'eval': [
-                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=1, drop=False),
+                TextureCrop(stride=size, window_size=size, metric='ghe', position='top', n=16, drop=False),
             ],
         },
     }
