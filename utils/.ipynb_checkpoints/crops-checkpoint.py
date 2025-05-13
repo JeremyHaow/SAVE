@@ -157,12 +157,48 @@ def threshold_texture_crop(image, stride=224, window_size=224, threshold=5, drop
 
     return texture_images
 
+def combine_texture_crops(texture_images, grid_size = 4):
+    """
+    将纹理裁剪图像列表组合成一个 n x n 的正方形图像。
+
+    Args:
+        texture_images: 包含 PIL.Image 对象的列表。
+        n: 正方形网格的块数（每行和每列的块数）。
+
+    Returns:
+        一个 PIL.Image 对象，表示组合后的正方形图像。
+    """
+    if not texture_images:
+        return None
+
+    first_image = texture_images[0]
+    image_width, image_height = first_image.size
+    combined_width = grid_size * image_width
+    combined_height = grid_size * image_height
+    combined_image = Image.new('RGB', (combined_width, combined_height))
+
+    for i in range(grid_size):
+        for j in range(grid_size):
+            index = i * grid_size + j
+            if index < len(texture_images):
+                x_offset = j * image_width
+                y_offset = i * image_height
+                combined_image.paste(texture_images[index], (x_offset, y_offset))
+            else:
+                # 如果提供的 texture_images 不足 grid_size*grid_size 张，则使用最后一张填充
+                last_image = texture_images[-1]
+                x_offset = j * image_width
+                y_offset = i * image_height
+                combined_image.paste(last_image, (x_offset, y_offset))
+
+    return combined_image
+
 # 新增：将 texture_crop 封装为可直接用于 Compose 的 Transform
 class TextureCrop(object):
     """
-    可作为 torchvision transform 的纹理裁剪类，返回单张 PIL.Image。
+    可作为 torchvision transform 的纹理裁剪类，返回组合后的 PIL.Image。
     """
-    def __init__(self, stride, window_size, metric='he', position='top', n=1, drop=False):
+    def __init__(self, stride, window_size, metric='he', position='top', n=16, drop=False):
         self.stride = stride
         self.window_size = window_size
         self.metric = metric
@@ -173,17 +209,34 @@ class TextureCrop(object):
         self._fallback = CenterCrop(window_size)
 
     def __call__(self, image):
-        # 如果图像尺寸不足，直接做中心裁剪
+        # Calculate grid_dim based on self.n, used for consistent output size
+        # Since self.n >= 1 (default is 16 in __init__), grid_dim will be >= 1.
+        grid_dim = int(np.ceil(np.sqrt(self.n)))
+
         if image.width < self.window_size or image.height < self.window_size:
-            return self._fallback(image)
-        # 否则调用原函数并取第一张
+            single_center_crop = self._fallback(image) # This is window_size x window_size
+            
+            # Create a list of crops for the fallback, tiling the single_center_crop
+            # to fill the grid_dim * grid_dim grid.
+            num_fallback_crops = grid_dim * grid_dim
+            fallback_crops = [single_center_crop] * num_fallback_crops
+            
+            # Combine these fallback crops into an image of size 
+            # (grid_dim * window_size, grid_dim * window_size)
+            return combine_texture_crops(fallback_crops, grid_size=grid_dim)
+
+        # Proceed with normal texture cropping
         crops = texture_crop(
             image,
             stride=self.stride,
             window_size=self.window_size,
             metric=self.metric,
             position=self.position,
-            n=self.n,
+            n=self.n, 
             drop=self.drop
         )
-        return crops[0]
+        
+        # 'crops' contains self.n images. 
+        # combine_texture_crops will tile if len(crops) < grid_dim * grid_dim.
+        combined_image = combine_texture_crops(crops, grid_size=grid_dim)
+        return combined_image

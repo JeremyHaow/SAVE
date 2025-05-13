@@ -253,14 +253,6 @@ def main(args):
     # Init Model
     if args.model == 'SAFE':
         model = resnet50(num_classes=2)
-    elif args.model == 'mamba_tiny':
-        model = mamba_tiny(num_classes=2)
-    elif args.model == 'mamba_small':
-        model = mamba_small(num_classes=2)
-    elif args.model == 'mamba_base':
-        model = mamba_base(num_classes=2)
-    elif args.model == 'mamba_large':
-        model = mamba_large(num_classes=2)
     else:
         model = timm.create_model(args.model, pretrained=args.pretrained, num_classes=2)
     model.to(device)
