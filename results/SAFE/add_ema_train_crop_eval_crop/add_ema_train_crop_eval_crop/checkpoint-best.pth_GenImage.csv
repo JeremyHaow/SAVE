@@ -1,0 +1,10 @@
+testset            , accuracy         , avg precision
+adm_imagenet       , 90.93333333333334, 98.53325307559365
+biggan_imagenet    , 97.11666666666666, 99.63252332699841
+glide_imagenet     , 93.66666666666667, 99.15563433932948
+midjourney_imagenet, 95.625           , 99.3837352697268
+sdv4_imagenet      , 99.175           , 99.83140792496343
+sdv5_imagenet      , 99.00625         , 99.78939108733206
+vqdm_imagenet      , 97.45            , 99.60931785006719
+wukong_imagenet    , 98.5             , 99.66114003177012
+mean               , 96.43411458333334, 99.44955036322264

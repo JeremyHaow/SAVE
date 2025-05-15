@@ -115,7 +115,7 @@ class Bottleneck(nn.Module):
 class ResNet(nn.Module):
 
     def __init__(self, block, layers, num_classes=2, zero_init_residual=False,
-                 use_wtconv=True, wt_levels=1, wt_type='bior1.3'):
+                 use_wtconv=False, wt_levels=1, wt_type='bior1.3'):
         super(ResNet, self).__init__()
 
         self.unfoldSize = 2

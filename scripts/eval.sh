@@ -13,13 +13,13 @@ DISTRIBUTED_ARGS="
 "
 
 MODEL="SAFE"
-RESUME_PATH="./results/SAFE/20250508_163535"
+RESUME_PATH="./results/SAFE/20250515_162912"
 
 eval_datasets=(
-    # "/root/lanyun-tmp/datasets/AIGCDetectionBenchMark/test" \  
-    # "/root/lanyun-tmp/datasets/ForenSynths/test" \
-    # "/root/lanyun-tmp/datasets/GenImage/test" \
-    # "/root/lanyun-tmp/datasets/Self-Synthesis/test" \
+    "/root/lanyun-tmp/datasets/AIGCDetectionBenchMark/test" \  
+    "/root/lanyun-tmp/datasets/ForenSynths/test" \
+    "/root/lanyun-tmp/datasets/GenImage/test" \
+    "/root/lanyun-tmp/datasets/Self-Synthesis/test" \
     "/root/lanyun-tmp/datasets/Chameleon/test" \
 )
 for eval_dataset in "${eval_datasets[@]}"
@@ -31,7 +31,7 @@ do
         --eval_data_path $eval_dataset \
         --batch_size 256 \
         --num_workers 16 \
-        --output_dir $RESUME_PATH/eval_crop \
+        --output_dir $RESUME_PATH/add_ema_train_crop_eval_crop \
         --resume $RESUME_PATH/checkpoint-best.pth \
         --eval True
 done

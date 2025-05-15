@@ -17,7 +17,7 @@ from timm.loss import LabelSmoothingCrossEntropy, SoftTargetCrossEntropy
 from timm.utils import ModelEma
 from optim_factory import create_optimizer, LayerDecayValueAssigner
 
-from models.SAVE import resnet50
+from models.resnet_wt import resnet50
 from data.datasets import TrainDataset
 from engine_finetune import train_one_epoch, evaluate
 
